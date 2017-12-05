@@ -10,7 +10,7 @@
 - name: Update apt cache when package manager is apt
   apt:
     update_cache: yes
-  when: "{{ ansible_os_family }}" == "Debian"
+  when: ansible_os_family == "Debian"
 
 - name: Install packages
   package:

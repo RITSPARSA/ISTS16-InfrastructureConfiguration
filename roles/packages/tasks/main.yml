@@ -1,0 +1,19 @@
+---
+
+- name: Include OS specific package names
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"
+
+- name: Update apt cache when package manager is apt
+  apt:
+    update_cache: yes
+  when: "{{ ansible_os_family }}" == "Debian"
+
+- name: Install packages
+  package:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ packages }}"

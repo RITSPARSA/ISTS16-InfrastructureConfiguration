@@ -1,0 +1,8 @@
+[linux]
+10.0.0.1
+
+[linux:vars]
+ansible_user=root
+ansible_ssh_pass=changeme
+ansible_become_pass=changeme
+ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'

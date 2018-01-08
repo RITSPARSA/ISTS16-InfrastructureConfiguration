@@ -1,0 +1,13 @@
+---
+# handlers file for jenkins-deploy
+- name: Ensure jenkins is running and starting on boot
+
+  service:
+
+    name: jenkins
+
+    state: started
+
+    enabled: yes
+
+  when: ansible_os_family == "FreeBSD"

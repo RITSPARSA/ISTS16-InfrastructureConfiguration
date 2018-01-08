@@ -1,0 +1,44 @@
+---
+# tasks file for jenkins-deploy
+
+- name Include Jenkins deploy variables
+  include_vars: "{{item}}"
+  with_first_found:
+	- "{{ansible_distribution}}.yml"
+	- "{{ansible_os_family}}.yml"
+	- "default.yml"
+
+- nameISTS16-InfrastructureConfiguration- name: Include Jenkins deploy 
+variables
+
+  include_vars: "{{ item }}"
+
+  with_first_found:
+
+    - "{{ ansible_distribution }}.yml"
+
+    - "{{ ansible_os_family }}.yml"
+
+    - "default.yml"
+ 
+
+- name: Install Jenkins for FreeBSD
+
+  pkgng: name=jenkins state=present
+
+  register: jenkins_install
+
+  when: ansible_os_family == "FreeBSD"
+
+
+- name: Ensure jenkins is running and starting on boot
+
+  service:
+
+    name: jenkins
+
+    state: started
+
+    enabled: yes
+
+  when: ansible_os_family == "FreeBSD"

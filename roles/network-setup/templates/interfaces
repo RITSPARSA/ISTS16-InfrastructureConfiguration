@@ -1,0 +1,31 @@
+{% set team_id = machines[inventory_hostname]['team_id'] %}
+{% set ip = machines[inventory_hostname]['ip']}
+{% set netmask = machines[inventory_hostname]['netmask']}
+{% set network = machines[inventory_hostname]['network']}
+{% set broadcast = machines[inventory_hostname]['broadcast']}
+{% set gateway = machines[inventory_hostname]['gateway']}
+{% set domain = 'team'+team_id+'.ists' %}
+{% set nameserver_fqdn = hostnames['ad']+'.'+domain %}
+{% set nameserver_ip = machines[nameserver_fqdn]['ip'] %}
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet static
+    address {{ ip }}
+    netmask {{ netmask }}
+    network {{ network }}
+    broadcast {{ broadcast }}
+    gateway {{ gateway }}
+{% if whiteteam_nameservers is not none %}
+    dns-nameservers {{ nameserver_ip}} {{ whiteteam_nameservers|join(" ") }}
+{% else %}
+    dns-nameservers {{ nameserver_ip}}
+{% endif %}
+    dns-domain {{ domain }}
+    dns-search {{ domain }}

@@ -19,12 +19,22 @@ i.e.
 Role Variables
 --------------
 'machines' in /group_vars/all.yml
+  Maps an FQDN to a team identifier and ip address
 
+'hostnames' in /group_vars/all.yml
+  Maps a machines' role to its hostname (i.e. AD --> sol)
+
+'whiteteam_nameservers' in /group_vars/all.yml
+  An optional list of nameservers to include
+
+'whiteteam_hosts' in /group_vars/all.yml
+  An optional dictionary of /etc/hosts definitions
+  i.e.
+  {'whiteteam_hosts': {'ip': 'hostname'}}
 
 Dependencies
 ------------
-
-N/A
+The resolv.conf template will assign the default nameserver to the 'ad' host (defined in hostnames) by default.
 
 Example Playbook
 ----------------

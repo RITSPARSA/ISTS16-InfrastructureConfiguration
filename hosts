@@ -1,5 +1,3 @@
-[linux]
-
 [FreeBSD]
 vega.team0.ists
 vega.team1.ists
@@ -140,10 +138,29 @@ wolf.team9.ists
 wolf.team10.ists
 wolf.team11.ists
 
+[Linux:children]
+CentOS
+ParrotOS
+RaspberryPi
+Ubuntu
 
+[Unix:children]
+FreeBSD
 
-[linux:vars]
+[Nix:children]
+linux
+unix
+
+[Nix:vars]
 ansible_user=root
 ansible_ssh_pass=changeme
 ansible_become_pass=changeme
 ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
+
+
+[Windows:children]
+WindowsAD
+WindowsFTP
+WindowsJenkins
+WindowsMail
+

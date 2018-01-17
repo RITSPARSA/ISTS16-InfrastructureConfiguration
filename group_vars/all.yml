@@ -1,377 +1,376 @@
 ---
-
 machines:
   vega.team0.ists:
-      team_id: 0
-      ip: 10.2.0.10
-    sirius.team0.ists:
-      team_id: 0
-      ip: 10.2.0.20
-    tauri.team0.ists:
-      team_id: 0
-      ip: 10.2.0.30
-    sol.team0.ists:
-      team_id: 0
-      ip: 10.2.0.40
-    crucis.team0.ists:
-      team_id: 0
-      ip: 10.2.0.50
-    persei.team0.ists:
-      team_id: 0
-      ip: 10.2.0.60
-    luna.team0.ists:
-      team_id: 0
-      ip: 10.2.0.75
-    andromeda.team0.ists:
-      team_id: 0
-      ip: 10.2.0.100
-    pegasi.team0.ists:
-      team_id: 0
-      ip: 10.3.0.10
-    wolf.team0.ists:
-      team_id: 0
-      ip: 10.3.0.20
+    team_id: "0"
+    ip: "10.2.0.10"
+  sirius.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.20"
+  tauri.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.30"
+  sol.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.40"
+  crucis.team0.ists:
+    team_id: "i"
+    ip: "10.2.0.50"
+  persei.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.60"
+  luna.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.75"
+  andromeda.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.100"
+  pegasi.team0.ists:
+    team_id: "0"
+    ip: "10.3.0.10"
+  wolf.team0.ists:
+    team_id: "0"
+    ip: "10.3.0.20"
 
   vega.team1.ists:
-      team_id: 1
-      ip: 10.2.1.10
-    sirius.team1.ists:
-      team_id: 1
-      ip: 10.2.1.20
-    tauri.team1.ists:
-      team_id: 1
-      ip: 10.2.1.30
-    sol.team1.ists:
-      team_id: 1
-      ip: 10.2.1.40
-    crucis.team1.ists:
-      team_id: 1
-      ip: 10.2.1.50
-    persei.team1.ists:
-      team_id: 1
-      ip: 10.2.1.60
-    luna.team1.ists:
-      team_id: 1
-      ip: 10.2.1.75
-    andromeda.team1.ists:
-      team_id: 1
-      ip: 10.2.1.100
-    pegasi.team1.ists:
-      team_id: 1
-      ip: 10.3.1.10
-    wolf.team1.ists:
-      team_id: 1
-      ip: 10.3.1.20
+    team_id: "1"
+    ip: "10.2.1.10"
+  sirius.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.20"
+  tauri.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.30"
+  sol.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.40"
+  crucis.team1.ists:
+    team_id: "i"
+    ip: "10.2.1.50"
+  persei.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.60"
+  luna.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.75"
+  andromeda.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.100"
+  pegasi.team1.ists:
+    team_id: "1"
+    ip: "10.3.1.10"
+  wolf.team1.ists:
+    team_id: "1"
+    ip: "10.3.1.20"
 
   vega.team2.ists:
-      team_id: 2
-      ip: 10.2.2.10
-    sirius.team2.ists:
-      team_id: 2
-      ip: 10.2.2.20
-    tauri.team2.ists:
-      team_id: 2
-      ip: 10.2.2.30
-    sol.team2.ists:
-      team_id: 2
-      ip: 10.2.2.40
-    crucis.team2.ists:
-      team_id: 2
-      ip: 10.2.2.50
-    persei.team2.ists:
-      team_id: 2
-      ip: 10.2.2.60
-    luna.team2.ists:
-      team_id: 2
-      ip: 10.2.2.75
-    andromeda.team2.ists:
-      team_id: 2
-      ip: 10.2.2.100
-    pegasi.team2.ists:
-      team_id: 2
-      ip: 10.3.2.10
-    wolf.team2.ists:
-      team_id: 2
-      ip: 10.3.2.20
+    team_id: "2"
+    ip: "10.2.2.10"
+  sirius.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.20"
+  tauri.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.30"
+  sol.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.40"
+  crucis.team2.ists:
+    team_id: "i"
+    ip: "10.2.2.50"
+  persei.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.60"
+  luna.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.75"
+  andromeda.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.100"
+  pegasi.team2.ists:
+    team_id: "2"
+    ip: "10.3.2.10"
+  wolf.team2.ists:
+    team_id: "2"
+    ip: "10.3.2.20"
 
   vega.team3.ists:
-      team_id: 3
-      ip: 10.2.3.10
-    sirius.team3.ists:
-      team_id: 3
-      ip: 10.2.3.20
-    tauri.team3.ists:
-      team_id: 3
-      ip: 10.2.3.30
-    sol.team3.ists:
-      team_id: 3
-      ip: 10.2.3.40
-    crucis.team3.ists:
-      team_id: 3
-      ip: 10.2.3.50
-    persei.team3.ists:
-      team_id: 3
-      ip: 10.2.3.60
-    luna.team3.ists:
-      team_id: 3
-      ip: 10.2.3.75
-    andromeda.team3.ists:
-      team_id: 3
-      ip: 10.2.3.100
-    pegasi.team3.ists:
-      team_id: 3
-      ip: 10.3.3.10
-    wolf.team3.ists:
-      team_id: 3
-      ip: 10.3.3.20
+    team_id: "3"
+    ip: "10.2.3.10"
+  sirius.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.20"
+  tauri.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.30"
+  sol.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.40"
+  crucis.team3.ists:
+    team_id: "i"
+    ip: "10.2.3.50"
+  persei.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.60"
+  luna.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.75"
+  andromeda.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.100"
+  pegasi.team3.ists:
+    team_id: "3"
+    ip: "10.3.3.10"
+  wolf.team3.ists:
+    team_id: "3"
+    ip: "10.3.3.20"
 
   vega.team4.ists:
-      team_id: 4
-      ip: 10.2.4.10
-    sirius.team4.ists:
-      team_id: 4
-      ip: 10.2.4.20
-    tauri.team4.ists:
-      team_id: 4
-      ip: 10.2.4.30
-    sol.team4.ists:
-      team_id: 4
-      ip: 10.2.4.40
-    crucis.team4.ists:
-      team_id: 4
-      ip: 10.2.4.50
-    persei.team4.ists:
-      team_id: 4
-      ip: 10.2.4.60
-    luna.team4.ists:
-      team_id: 4
-      ip: 10.2.4.75
-    andromeda.team4.ists:
-      team_id: 4
-      ip: 10.2.4.100
-    pegasi.team4.ists:
-      team_id: 4
-      ip: 10.3.4.10
-    wolf.team4.ists:
-      team_id: 4
-      ip: 10.3.4.20
+    team_id: "4"
+    ip: "10.2.4.10"
+  sirius.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.20"
+  tauri.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.30"
+  sol.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.40"
+  crucis.team4.ists:
+    team_id: "i"
+    ip: "10.2.4.50"
+  persei.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.60"
+  luna.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.75"
+  andromeda.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.100"
+  pegasi.team4.ists:
+    team_id: "4"
+    ip: "10.3.4.10"
+  wolf.team4.ists:
+    team_id: "4"
+    ip: "10.3.4.20"
 
   vega.team5.ists:
-      team_id: 5
-      ip: 10.2.5.10
-    sirius.team5.ists:
-      team_id: 5
-      ip: 10.2.5.20
-    tauri.team5.ists:
-      team_id: 5
-      ip: 10.2.5.30
-    sol.team5.ists:
-      team_id: 5
-      ip: 10.2.5.40
-    crucis.team5.ists:
-      team_id: 5
-      ip: 10.2.5.50
-    persei.team5.ists:
-      team_id: 5
-      ip: 10.2.5.60
-    luna.team5.ists:
-      team_id: 5
-      ip: 10.2.5.75
-    andromeda.team5.ists:
-      team_id: 5
-      ip: 10.2.5.100
-    pegasi.team5.ists:
-      team_id: 5
-      ip: 10.3.5.10
-    wolf.team5.ists:
-      team_id: 5
-      ip: 10.3.5.20
+    team_id: "5"
+    ip: "10.2.5.10"
+  sirius.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.20"
+  tauri.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.30"
+  sol.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.40"
+  crucis.team5.ists:
+    team_id: "i"
+    ip: "10.2.5.50"
+  persei.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.60"
+  luna.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.75"
+  andromeda.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.100"
+  pegasi.team5.ists:
+    team_id: "5"
+    ip: "10.3.5.10"
+  wolf.team5.ists:
+    team_id: "5"
+    ip: "10.3.5.20"
 
   vega.team6.ists:
-      team_id: 6
-      ip: 10.2.6.10
-    sirius.team6.ists:
-      team_id: 6
-      ip: 10.2.6.20
-    tauri.team6.ists:
-      team_id: 6
-      ip: 10.2.6.30
-    sol.team6.ists:
-      team_id: 6
-      ip: 10.2.6.40
-    crucis.team6.ists:
-      team_id: 6
-      ip: 10.2.6.50
-    persei.team6.ists:
-      team_id: 6
-      ip: 10.2.6.60
-    luna.team6.ists:
-      team_id: 6
-      ip: 10.2.6.75
-    andromeda.team6.ists:
-      team_id: 6
-      ip: 10.2.6.100
-    pegasi.team6.ists:
-      team_id: 6
-      ip: 10.3.6.10
-    wolf.team6.ists:
-      team_id: 6
-      ip: 10.3.6.20
+    team_id: "6"
+    ip: "10.2.6.10"
+  sirius.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.20"
+  tauri.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.30"
+  sol.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.40"
+  crucis.team6.ists:
+    team_id: "i"
+    ip: "10.2.6.50"
+  persei.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.60"
+  luna.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.75"
+  andromeda.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.100"
+  pegasi.team6.ists:
+    team_id: "6"
+    ip: "10.3.6.10"
+  wolf.team6.ists:
+    team_id: "6"
+    ip: "10.3.6.20"
 
   vega.team7.ists:
-      team_id: 7
-      ip: 10.2.7.10
-    sirius.team7.ists:
-      team_id: 7
-      ip: 10.2.7.20
-    tauri.team7.ists:
-      team_id: 7
-      ip: 10.2.7.30
-    sol.team7.ists:
-      team_id: 7
-      ip: 10.2.7.40
-    crucis.team7.ists:
-      team_id: 7
-      ip: 10.2.7.50
-    persei.team7.ists:
-      team_id: 7
-      ip: 10.2.7.60
-    luna.team7.ists:
-      team_id: 7
-      ip: 10.2.7.75
-    andromeda.team7.ists:
-      team_id: 7
-      ip: 10.2.7.100
-    pegasi.team7.ists:
-      team_id: 7
-      ip: 10.3.7.10
-    wolf.team7.ists:
-      team_id: 7
-      ip: 10.3.7.20
+    team_id: "7"
+    ip: "10.2.7.10"
+  sirius.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.20"
+  tauri.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.30"
+  sol.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.40"
+  crucis.team7.ists:
+    team_id: "i"
+    ip: "10.2.7.50"
+  persei.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.60"
+  luna.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.75"
+  andromeda.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.100"
+  pegasi.team7.ists:
+    team_id: "7"
+    ip: "10.3.7.10"
+  wolf.team7.ists:
+    team_id: "7"
+    ip: "10.3.7.20"
 
   vega.team8.ists:
-      team_id: 8
-      ip: 10.2.8.10
-    sirius.team8.ists:
-      team_id: 8
-      ip: 10.2.8.20
-    tauri.team8.ists:
-      team_id: 8
-      ip: 10.2.8.30
-    sol.team8.ists:
-      team_id: 8
-      ip: 10.2.8.40
-    crucis.team8.ists:
-      team_id: 8
-      ip: 10.2.8.50
-    persei.team8.ists:
-      team_id: 8
-      ip: 10.2.8.60
-    luna.team8.ists:
-      team_id: 8
-      ip: 10.2.8.75
-    andromeda.team8.ists:
-      team_id: 8
-      ip: 10.2.8.100
-    pegasi.team8.ists:
-      team_id: 8
-      ip: 10.3.8.10
-    wolf.team8.ists:
-      team_id: 8
-      ip: 10.3.8.20
+    team_id: "8"
+    ip: "10.2.8.10"
+  sirius.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.20"
+  tauri.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.30"
+  sol.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.40"
+  crucis.team8.ists:
+    team_id: "i"
+    ip: "10.2.8.50"
+  persei.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.60"
+  luna.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.75"
+  andromeda.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.100"
+  pegasi.team8.ists:
+    team_id: "8"
+    ip: "10.3.8.10"
+  wolf.team8.ists:
+    team_id: "8"
+    ip: "10.3.8.20"
 
   vega.team9.ists:
-      team_id: 9
-      ip: 10.2.9.10
-    sirius.team9.ists:
-      team_id: 9
-      ip: 10.2.9.20
-    tauri.team9.ists:
-      team_id: 9
-      ip: 10.2.9.30
-    sol.team9.ists:
-      team_id: 9
-      ip: 10.2.9.40
-    crucis.team9.ists:
-      team_id: 9
-      ip: 10.2.9.50
-    persei.team9.ists:
-      team_id: 9
-      ip: 10.2.9.60
-    luna.team9.ists:
-      team_id: 9
-      ip: 10.2.9.75
-    andromeda.team9.ists:
-      team_id: 9
-      ip: 10.2.9.100
-    pegasi.team9.ists:
-      team_id: 9
-      ip: 10.3.9.10
-    wolf.team9.ists:
-      team_id: 9
-      ip: 10.3.9.20
+    team_id: "9"
+    ip: "10.2.9.10"
+  sirius.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.20"
+  tauri.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.30"
+  sol.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.40"
+  crucis.team9.ists:
+    team_id: "i"
+    ip: "10.2.9.50"
+  persei.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.60"
+  luna.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.75"
+  andromeda.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.100"
+  pegasi.team9.ists:
+    team_id: "9"
+    ip: "10.3.9.10"
+  wolf.team9.ists:
+    team_id: "9"
+    ip: "10.3.9.20"
 
   vega.team10.ists:
-      team_id: 10
-      ip: 10.2.10.10
-    sirius.team10.ists:
-      team_id: 10
-      ip: 10.2.10.20
-    tauri.team10.ists:
-      team_id: 10
-      ip: 10.2.10.30
-    sol.team10.ists:
-      team_id: 10
-      ip: 10.2.10.40
-    crucis.team10.ists:
-      team_id: 10
-      ip: 10.2.10.50
-    persei.team10.ists:
-      team_id: 10
-      ip: 10.2.10.60
-    luna.team10.ists:
-      team_id: 10
-      ip: 10.2.10.75
-    andromeda.team10.ists:
-      team_id: 10
-      ip: 10.2.10.100
-    pegasi.team10.ists:
-      team_id: 10
-      ip: 10.3.10.10
-    wolf.team10.ists:
-      team_id: 10
-      ip: 10.3.10.20
+    team_id: "10"
+    ip: "10.2.10.10"
+  sirius.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.20"
+  tauri.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.30"
+  sol.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.40"
+  crucis.team10.ists:
+    team_id: "i"
+    ip: "10.2.10.50"
+  persei.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.60"
+  luna.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.75"
+  andromeda.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.100"
+  pegasi.team10.ists:
+    team_id: "10"
+    ip: "10.3.10.10"
+  wolf.team10.ists:
+    team_id: "10"
+    ip: "10.3.10.20"
 
   vega.team11.ists:
-      team_id: 11
-      ip: 10.2.11.10
-    sirius.team11.ists:
-      team_id: 11
-      ip: 10.2.11.20
-    tauri.team11.ists:
-      team_id: 11
-      ip: 10.2.11.30
-    sol.team11.ists:
-      team_id: 11
-      ip: 10.2.11.40
-    crucis.team11.ists:
-      team_id: 11
-      ip: 10.2.11.50
-    persei.team11.ists:
-      team_id: 11
-      ip: 10.2.11.60
-    luna.team11.ists:
-      team_id: 11
-      ip: 10.2.11.75
-    andromeda.team11.ists:
-      team_id: 11
-      ip: 10.2.11.100
-    pegasi.team11.ists:
-      team_id: 11
-      ip: 10.3.11.10
-    wolf.team11.ists:
-      team_id: 11
-      ip: 10.3.11.20
+    team_id: "11"
+    ip: "10.2.11.10"
+  sirius.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.20"
+  tauri.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.30"
+  sol.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.40"
+  crucis.team11.ists:
+    team_id: "i"
+    ip: "10.2.11.50"
+  persei.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.60"
+  luna.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.75"
+  andromeda.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.100"
+  pegasi.team11.ists:
+    team_id: "11"
+    ip: "10.3.11.10"
+  wolf.team11.ists:
+    team_id: "11"
+    ip: "10.3.11.20"
 
 hostnames:
   mail: tauri
@@ -385,4 +384,3 @@ hostnames:
   db: sirius
   attack: persei
   android: andromeda
-

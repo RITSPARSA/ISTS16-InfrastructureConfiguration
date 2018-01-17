@@ -1,3 +1,4 @@
+---
 [FreeBSD]
 vega.team0.ists
 vega.team1.ists
@@ -164,3 +165,11 @@ WindowsFTP
 WindowsJenkins
 WindowsMail
 
+[test_nix]
+test.team0.ists
+
+[test_nix:vars]
+ansible_user=root
+#ansible_ssh_pass='Password123*'
+#ansible_become_pass='Password123*'
+#ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'

@@ -1,9 +1,4 @@
 ---
-- name: Apply the interfaces template
-  template:
-    src: templates/interfaces
-    dest: /etc/network/interfaces
-
 - name: Apply the resolv.conf template
   template:
     src: templates/resolv.conf
@@ -13,3 +8,10 @@
   template:
     src: templates/hosts
     dest: /etc/hosts
+
+- name: Apply the interfaces template
+  template:
+    src: templates/interfaces
+    dest: /etc/network/interfaces
+  notify:
+    - Restart networking

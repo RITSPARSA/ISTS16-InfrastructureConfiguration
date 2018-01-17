@@ -1,6 +1,5 @@
 ---
-# handlers file for network-setup
-- name: Reset networking
+- name: Restart networking
   service:
     name: networking
     state: restarted

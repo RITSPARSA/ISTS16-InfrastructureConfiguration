@@ -1,0 +1,63 @@
+---
+# tasks file for web-predeploy
+- name: install requirements
+  block:
+    - apt: upgrade=yes
+    - apt: name=apache2 state=latest
+    - apt: name=python-dev state=latest
+    - apt: name=libapache2-mod-wsgi state=latest
+    - apt: name=python-pip state=latest
+  become: true
+  become_user: root
+
+# going to change this to git
+- name: upload application files
+  copy:
+    src: /home/doshmajhan/ISTS16_Ecommerce
+    dest: /var/www/
+    owner: www-data
+    group: www-data
+    directory_mode: 0755
+    mode: 0755
+  become: true 
+  become_user: root
+
+- name: install required python packages
+  pip:
+    requirements: /var/www/ISTS16_Ecommerce/requirements.txt
+  become: true 
+  become_user: root
+
+- name: enable wsgi mod
+  command: /usr/sbin/a2enmod wsgi
+  become: true 
+  become_user: root 
+
+- name: write the wsgi conf file to sites-available
+  copy:
+    src: /var/www/ISTS16_Ecommerce/ecomm.conf
+    dest: /etc/apache2/sites-available/
+    owner: root
+    group: root
+    remote_src: yes
+  become: true
+  become_user: root
+
+- name: dissable default site
+  command: /usr/sbin/a2dissite 000-default
+  become: true
+  become_user: root
+
+- name: enable the ecomm site
+  command: /usr/sbin/a2ensite ecomm
+  become: true
+  become_user: root
+
+- name: restart apache2
+  service:
+    name: apache2
+    state: restarted
+  become: true
+  become_user: root
+
+# run pytests

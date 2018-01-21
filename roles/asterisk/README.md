@@ -25,7 +25,7 @@ Example Playbook
 
 - hosts: voip
   roles:
-    - { role: asterisk }
+    - { asterisk }
 
 Author
 ------

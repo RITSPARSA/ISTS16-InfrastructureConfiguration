@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: SPARSA
+  description: a role that configures a server to use MS AD for authentication
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - precise
+    - xenial
+  - name: Debian
+    versions:
+    - wheezie
+    - jessie
+  - name: CentOS
+    versions:
+    - 7.0
+  categories:
+  - system
+  - cloud
+dependencies: []

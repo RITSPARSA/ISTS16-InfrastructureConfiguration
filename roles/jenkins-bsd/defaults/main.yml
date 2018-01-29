@@ -11,8 +11,27 @@ jenkins_user: jenkins
 
 # The directory Jenkins installs to
 # For BSD it is here
-jenkins_install_dir: /usr/local/jenkins
+jenkins_dir: /usr/local/jenkins
 
 # Plugins to install along with Jenkins
 jenkins_plugins:
-  - git
+  - Github
+
+#
+# Variables for the project that the scoring engine will run
+#
+
+# The name of the Project
+jenkins_build_name: "ScoringEngineCheck"
+
+# The PUBLIC git repository to pull from
+jenkins_build_url: "https://github.com/micahjmartin/HelloWorld"
+
+# The repository branch to pull from
+jenkins_build_branch: "master"
+
+# The commands to run during the build
+jenkins_build_command: |
+  gcc -o hello hello.c
+  ./hello
+

@@ -1,3 +1,7 @@
 ---
 - include_tasks: install.yml
 - include_tasks: configure.yml
+- include_tasks: startup.yml
+- pause:
+  seconds: 10
+- include_tasks: plugins.yml

@@ -1,0 +1,11 @@
+[all:vars]
+ansible_ssh_user=root
+ansible_ssh_pass=Changeme-2018
+
+[freebsd]
+10.80.100.10 ansible_connection=paramiko
+
+[freebsd:vars]
+ansible_python_interpreter=/usr/local/bin/python
+
+

@@ -1,5 +1,16 @@
 # Install Jenkins long-time-support via 'pkg'
 - name: Installing Jenkins
   pkgng:
-    name: 'jenkins-lts'
+    name: '{{ item }}'
     state: present
+  with_items:
+    - "jenkins-lts"
+
+# Install various build tools via 'pkg'
+- name: Installing Build tools
+  pkgng:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - "git"
+    - "gcc"

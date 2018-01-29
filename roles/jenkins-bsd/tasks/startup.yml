@@ -1,0 +1,7 @@
+---
+# Start the service
+- name: Starting Jenkins
+  service:
+    name: jenkins
+    state: started
+

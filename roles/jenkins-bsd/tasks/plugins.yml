@@ -1,0 +1,29 @@
+---
+#- name: Get Jenkins API token
+#  uri:
+#    url: 'http://{{ inventory_hostname }}:{{ jenkins_port }}/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+#    return_content: yes
+#    status_code: 200,404
+#  register: jenkins_token
+
+#- name: Install plugins if crumb is enabled
+#  uri:
+#    url: "http:/{{ inventory_hostname }}:{{ jenkins_port }}/pluginManager/installNecessaryPlugins"
+#    method: POST
+#    headers:
+#      Content-Type: "text/xml"
+#      Jenkins-Crumb: "{{ jenkins_token.content.split(':')[1] | default('noCrumb') }}"
+#    body: "<jenkins><install plugin=\"{{ item }}@latest\" /></jenkins>"
+#    status_code: 200,302
+#  with_items: "{{ jenkins_plugins }}"
+#  when: jenkins_token.status == 200
+
+- name: Install plugins
+  uri:
+    url: "http://{{ inventory_hostname }}:{{ jenkins_port }}/pluginManager/installNecessaryPlugins"
+    method: POST
+    headers:
+      Content-Type: "text/xml"
+    body: "<jenkins><install plugin=\"{{ item }}@latest\" /></jenkins>"
+    status_code: 200,302
+  with_items: "{{ jenkins_plugins }}"

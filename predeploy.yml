@@ -4,4 +4,4 @@
 
 - hosts: FreeBSD
   roles:
-    - jenkins-bsd
+    - jenkinsbsd-predeploy

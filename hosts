@@ -163,3 +163,6 @@ WindowsAD
 WindowsFTP
 WindowsJenkins
 WindowsMail
+
+[FreeBSD:vars]
+ansible_connection=paramiko

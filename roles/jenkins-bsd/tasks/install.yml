@@ -1,0 +1,5 @@
+# Install Jenkins long-time-support via 'pkg'
+- name: Installing Jenkins
+  pkgng:
+    name: 'jenkins-lts'
+    state: present

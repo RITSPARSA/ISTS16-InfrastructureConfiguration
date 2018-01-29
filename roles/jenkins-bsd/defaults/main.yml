@@ -1,0 +1,14 @@
+---
+# Author: Micah Martin
+
+# Port that Jenkins will listen on
+# Not 80 because of non-root permissions
+jenkins_port: 8080
+
+# The user and group that Jenkins is installed under
+# For BSD (and most others) it is Jenkins
+jenkins_user: jenkins
+
+# The directory Jenkins installs to
+# For BSD it is here
+jenkins_install_dir: /usr/local/jenkins

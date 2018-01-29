@@ -8,14 +8,14 @@
 # Make sure there is an admin folder or Jenkins gets mad
 - name: Configuring Jenkins
   file:
-    path: "{{ jenkins_install_dir }}/users/admin"
+    path: "{{ jenkins_dir }}/users/admin"
     state: directory
 
 # Add the config for our custom user
 - name: "Adding User: Scoring"
   copy:
     src: "../files/users/scoring"
-    dest: "{{ jenkins_install_dir }}/users"
+    dest: "{{ jenkins_dir }}/users"
 
 # Set the port to the given value
 - name: "Configuring port"
@@ -31,20 +31,19 @@
     regexp: '(--prefix=).*"'
     replace: '\1"'
 
-# Make sure the entire directory is owned by the correct user
-- name: "Setting permissions"
-  file:
-    path: "{{ jenkins_install_dir }}"
-    state: directory
-    owner: "{{ jenkins_user }}"
-    group: "{{ jenkins_user }}"
-    recurse: yes
-
 # Skip the initial install
 - name: Bypassing Install
   lineinfile:
-    path: "{{ jenkins_install_dir }}/jenkins.install.InstallUtil.lastExecVersion"
+    path: "{{ jenkins_dir }}/jenkins.install.InstallUtil.lastExecVersion"
     line: "2.89.2"
     create: yes
     state: present
 
+# Make sure the entire directory is owned by the correct user
+- name: "Setting permissions"
+  file:
+    path: "{{ jenkins_dir }}"
+    state: directory
+    owner: "{{ jenkins_user }}"
+    group: "{{ jenkins_user }}"
+    recurse: yes

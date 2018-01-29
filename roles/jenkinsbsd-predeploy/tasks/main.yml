@@ -6,7 +6,8 @@
   include_tasks: configure.yml
 
 - include_tasks: startup.yml
-- pause:
+- name: Waiting for start up
+  pause:
    seconds: 10
 - include_tasks: plugins.yml
 - include_tasks: jobs.yml

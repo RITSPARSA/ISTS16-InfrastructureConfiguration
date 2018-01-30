@@ -1,0 +1,9 @@
+---
+# tasks file for ecomm-predeploy
+
+- name: Install Ecomm
+  include_tasks: install.yml
+  notify: Configure Ecomm
+
+- name: Configure Ecomm
+  include_tasks: configure.yml

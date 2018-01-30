@@ -157,9 +157,12 @@ ansible_ssh_pass=changeme
 ansible_become_pass=changeme
 ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
 
-
 [Windows:children]
 WindowsAD
 WindowsFTP
 WindowsJenkins
 WindowsMail
+
+[FreeBSD:vars]
+ansible_connection=paramiko
+ansible_python_intepreter=/usr/local/bin/python

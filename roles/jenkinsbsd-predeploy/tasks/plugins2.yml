@@ -1,0 +1,7 @@
+---
+# Add all the wanted plugins
+- name: "Adding plugins"
+  copy:
+    src: "../files/plugins"
+    dest: "{{ jenkins_dir }}/plugins"
+

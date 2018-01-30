@@ -1,0 +1,31 @@
+---
+- name: enable wsgi mod
+  command: /usr/sbin/a2enmod wsgi
+  become: true 
+  become_user: root
+
+- name: write the wsgi conf file to sites-available
+  copy:
+    src: "{{ role_path }}/config/ecomm.conf"
+    dest: /etc/apache2/sites-available/ecomm.conf
+    owner: root
+    group: root
+  become: true
+  become_user: root
+
+- name: dissable default site
+  command: /usr/sbin/a2dissite 000-default
+  become: true
+  become_user: root
+
+- name: enable the ecomm site
+  command: /usr/sbin/a2ensite ecomm
+  become: true
+  become_user: root
+
+- name: restart apache2
+  service:
+    name: apache2
+    state: restarted
+  become: true
+  become_user: root

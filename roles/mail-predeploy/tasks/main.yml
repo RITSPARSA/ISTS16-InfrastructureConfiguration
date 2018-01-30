@@ -8,5 +8,5 @@
     dest: C:\hMailInstaller.exe
 
 - name: Installing hMail
-  win_command: "C:\hMailInstaller.exe /verysilent"
+  win_command: C:\hMailInstaller.exe /verysilent
 

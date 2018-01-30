@@ -163,3 +163,7 @@ WindowsAD
 WindowsFTP
 WindowsJenkins
 WindowsMail
+
+[FreeBSD:vars]
+ansible_connection=paramiko
+ansible_python_intepreter=/usr/local/bin/python

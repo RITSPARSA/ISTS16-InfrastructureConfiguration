@@ -1,2 +1,7 @@
 ---
-# vars file for web-predeploy
+packages:
+  - "apache2"
+  - "python-dev"
+  - "libapache2-mod-wsgi"
+  - "python-pip"
+  - "git"

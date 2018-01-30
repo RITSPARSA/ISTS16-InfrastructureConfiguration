@@ -1,2 +1,4 @@
 ---
-# defaults file for web-predeploy
+app_dir: "/var/www/ISTS16_Ecommerce"
+
+git_repo: "git@github.com:doshmajhan/ISTS16_Ecommerce.git"

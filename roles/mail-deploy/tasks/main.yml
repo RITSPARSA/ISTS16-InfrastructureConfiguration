@@ -9,7 +9,7 @@
 
 # Execute the script
 - name: Running Script
-  win_shell: C:\Setup-hMail.ps1 
+  win_shell: C:\Setup-hMail.ps1
 
 # Remove the script from the system
 - name: Removing file

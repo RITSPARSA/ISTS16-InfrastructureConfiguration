@@ -1,0 +1,16 @@
+galaxy_info:
+  author: SPARSA
+  description: role to install and configure the Ecommerce application
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+  - name: Fedora
+    versions:
+    - trusty
+    - precise
+    - xenial
+
+  categories:
+  - cloud
+
+dependencies: []

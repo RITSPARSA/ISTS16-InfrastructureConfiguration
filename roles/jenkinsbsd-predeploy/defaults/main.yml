@@ -25,13 +25,13 @@ jenkins_plugins:
 jenkins_build_name: "ScoringEngineCheck"
 
 # The PUBLIC git repository to pull from
-jenkins_build_url: "https://github.com/micahjmartin/HelloWorld"
+jenkins_build_url: "https://github.com/RITSPARSA/ISTS16-Vega"
 
 # The repository branch to pull from
 jenkins_build_branch: "master"
 
 # The commands to run during the build
 jenkins_build_command: |
-  gcc -o hello hello.c
-  ./hello
+  make
+  ./prog hello
 

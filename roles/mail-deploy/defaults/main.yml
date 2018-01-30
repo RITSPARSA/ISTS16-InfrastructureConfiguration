@@ -1,0 +1,11 @@
+---
+# Domain name for the hMail server
+hmail_domain_name: "{{ inventory_hostname }}"
+
+# New users to add to the mail server
+hmail_users:
+  - injects
+  - zentral
+
+# Default password for all the user account
+hmail_password: "Changeme-2018"

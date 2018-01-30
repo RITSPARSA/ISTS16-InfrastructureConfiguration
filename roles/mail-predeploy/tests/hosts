@@ -1,0 +1,10 @@
+[all:vars]
+ansible_user=Administrator
+ansible_password=Changeme-2018
+ansible_port=5985
+ansible_connection=winrm
+#ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
+
+[mail]
+10.80.100.2

@@ -1,12 +1,18 @@
 ---
 # tasks file for vsrx-deploy
 
+- name: deploy filler
+  junos_config:
+      src: ../files/t0-filler.conf
+      update: merge
+      provider: "{{ netconf }}"
+
 - name: deploy interface config and upstream gateway
   junos_config:
       lines:
-          - 'set interfaces ge-0/0/0.0 family inet address 10.3.{{ team_num }}.254/24'
+          - 'set interfaces ge-0/0/0.0 family inet address {{ machines[ansible_host].ip }}'
           - 'delete interfaces ge-0/0/0.0 family inet dhcp'
           - 'delete interfaces ge-0/0/0 disable'
-          - 'set interfaces ge-0/0/1.0 family inet address 192.168.33.100/24'
-          - 'set routing-options static route 0.0.0.0/0 next-hop {{ upstream_gateway }}'
+          - 'set interfaces ge-0/0/1.0 family inet address {{ machines[ansible_host].public_ip }}'
+          - 'set routing-options static route 0.0.0.0/0 next-hop {{ machines[ansible_host].gateway }}'
       provider: "{{ netconf }}"

@@ -4,5 +4,3 @@ netconf:
     username: root
     password: Changeme-2018
     host: "{{ ansible_host }}"
-team_num: 1
-upstream_gateway: 192.168.33.254

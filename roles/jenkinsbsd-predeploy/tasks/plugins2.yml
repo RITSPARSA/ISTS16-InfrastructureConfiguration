@@ -3,5 +3,5 @@
 - name: "Adding plugins"
   copy:
     src: "../files/plugins"
-    dest: "{{ jenkins_dir }}/plugins"
+    dest: "{{ jenkins_dir }}/"
 

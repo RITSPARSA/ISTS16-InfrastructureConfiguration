@@ -8,6 +8,3 @@
 - include_tasks: plugins2.yml
 
 - include_tasks: startup.yml
-- name: Waiting for start up
-  pause:
-   seconds: 20

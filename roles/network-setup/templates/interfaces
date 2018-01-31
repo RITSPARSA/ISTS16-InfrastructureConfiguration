@@ -1,9 +1,9 @@
 {% set team_id = machines[inventory_hostname]['team_id'] %}
-{% set ip = machines[inventory_hostname]['ip']}
-{% set netmask = machines[inventory_hostname]['netmask']}
-{% set network = machines[inventory_hostname]['network']}
-{% set broadcast = machines[inventory_hostname]['broadcast']}
-{% set gateway = machines[inventory_hostname]['gateway']}
+{% set ip = machines[inventory_hostname]['ip'] %}
+{% set netmask = machines[inventory_hostname]['netmask'] %}
+{% set network = machines[inventory_hostname]['network'] %}
+{% set broadcast = machines[inventory_hostname]['broadcast'] %}
+{% set gateway = machines[inventory_hostname]['gateway'] %}
 {% set domain = 'team'+team_id+'.ists' %}
 {% set nameserver_fqdn = hostnames['ad']+'.'+domain %}
 {% set nameserver_ip = machines[nameserver_fqdn]['ip'] %}

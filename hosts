@@ -148,8 +148,8 @@ Ubuntu
 FreeBSD
 
 [Nix:children]
-linux
-unix
+Linux
+Unix
 
 [Nix:vars]
 ansible_user=root

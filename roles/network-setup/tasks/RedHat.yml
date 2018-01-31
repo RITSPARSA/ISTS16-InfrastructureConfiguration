@@ -1,45 +1,10 @@
 ---
-- name: Change the BOOTPROTO to static
-  replace:
-    path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
-    force: true
-    regexp: BOOTPROTO=
-    replace: BOOTPROTO="static"
-
-- name: Set NM_CONTROLLED to no
-  replace:
-    path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
-    force: yes
-    regexp: NM_CONTROLLED=
-    replace: NM_CONTROLLED=no
-
-- name: Set ONBOOT to yes
-  replace:
-    path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
-    force: yes
-    regexp: ONBOOT=
-    replace: ONBOOT="yes"
-
-- name: Set the IPADDR to a static ip
-  replace:
-    path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
-    force: yes
-    regexp: IPADDR=
-    replace: "IPADDR={{machines[inventory_hostname]['ip']}}"
-
-- name: Set the NETMASK
-  replace:
-    path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
-    force: yes
-    regexp: NETMASK=
-    replace: "NETMASK={{machines[inventory_hostname]['netmask']}}"
-
-- name: Set the GATEWAY
-  replace:
-    path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
-    force: yes
-    regexp: GATEWAY=
-    replace: GATEWAY={{machines[inventory_hostname]['gateway']}}
+- name: Apply the ifcfg template
+  template:
+    src: templates/ifcfg
+    dest: "/etc/sysconfig/network-scripts/ifcfg-{{ ansible_default_ipv4.interface }}"
+  notify:
+    - Restart network
 
 - name: Apply the resolv.conf template
   template:

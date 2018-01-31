@@ -17,4 +17,5 @@
   package:
     name: "{{ item }}"
     state: installed
+  skip: true
   with_items: "{{ packages }}"

@@ -1,7 +1,12 @@
 ---
-- name: "Include tasks specific to the operating system"
-   include_tasks: "{{ item }}"
-   with_first_found:
-     - "{{ ansible_distribution }}.yml"
-     - "{{ ansible_os_family }}.yml"
-     - "default.yml"
+
+- set_fact:
+    ansible_os_family: Debian
+  when: ansible_distribution == "Parrot GNU/Linux"
+
+- name: Include tasks specific to the operating system
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"

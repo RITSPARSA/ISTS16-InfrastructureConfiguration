@@ -29,7 +29,7 @@ for i in $(seq 0 11); do echo -e "
     gateway: \"10.2.$i.254\"
     broadcast: \"10.2.$i.254\"
   crucis.team$i.ists:
-    team_id: \"i\"
+    team_id: \"$i\"
     ip: \"10.2.$i.50\"
     network: \"10.2.$i.0\"
     netmask: \"255.255.255.0\"
@@ -70,7 +70,7 @@ for i in $(seq 0 11); do echo -e "
     netmask: \"255.255.255.0\"
     gateway: \"10.3.$i.254\"
     broadcast: \"10.3.$i.254\"
-   
+
 \n"; done
 
 echo -e "

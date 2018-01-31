@@ -4,42 +4,42 @@
     path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
     state: present
     regexp: BOOTPROTO=
-    line: BOOTPROTO="static"
+    replace: BOOTPROTO="static"
 
 - name: Set NM_CONTROLLED to no
   replace:
     path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
     state: present
     regexp: NM_CONTROLLED=
-    line: NM_CONTROLLED=no
+    replace: NM_CONTROLLED=no
 
 - name: Set ONBOOT to yes
   replace:
     path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
     state: present
     regexp: ONBOOT=
-    line: ONBOOT="yes"
+    replace: ONBOOT="yes"
 
 - name: Set the IPADDR to a static ip
   replace:
     path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
     state: present
     regexp: IPADDR=
-    line: "IPADDR={{machines[inventory_hostname]['ip']}}"
+    replace: "IPADDR={{machines[inventory_hostname]['ip']}}"
 
 - name: Set the NETMASK
   replace:
     path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
     state: present
     regexp: NETMASK=
-    line: "NETMASK={{machines[inventory_hostname]['netmask']}}"
+    replace: "NETMASK={{machines[inventory_hostname]['netmask']}}"
 
 - name: Set the GATEWAY
   replace:
     path: "/etc/sysconfig/network-scripts/ifcfg-{{ansible_default_ipv4.interface}}"
     state: present
     regexp: GATEWAY=
-    line: GATEWAY={{machines[inventory_hostname]['gateway']}}
+    replace: GATEWAY={{machines[inventory_hostname]['gateway']}}
 
 - name: Apply the resolv.conf template
   template:

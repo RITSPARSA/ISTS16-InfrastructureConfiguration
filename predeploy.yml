@@ -1,4 +1,4 @@
-- hosts: linux
+- hosts: Linux
   roles:
     - packages
 

@@ -3,7 +3,7 @@
     - network-setup
     - osquery-deploy
 
-- hosts: nix
+- hosts: Nix
   roles:
     - packages # TODO: Update roles.
 

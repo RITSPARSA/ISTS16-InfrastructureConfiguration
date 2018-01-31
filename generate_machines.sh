@@ -73,8 +73,8 @@ for i in $(seq 0 11); do echo -e "
   cygni.team$i.ists:
     team_id: \"$i\"
     ip: \"10.3.$i.254/24\"
-    public_ip: \"10.0.200.$i/26\"
-    gateway: \"10.0.200.62\"
+    public_ip: \"10.0.200.$[$i+64]/26\"
+    gateway: \"10.0.200.126\"
    
 \n"; done
 

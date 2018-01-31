@@ -151,11 +151,14 @@ FreeBSD
 Linux
 Unix
 
+[all:vars]
+ansible_ssh_pass=Changeme-2018
+ansible_become_pass=Changeme-2018
+ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
+
+
 [Nix:vars]
 ansible_user=root
-ansible_ssh_pass=changeme
-ansible_become_pass=changeme
-ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
 
 [Windows:children]
 WindowsAD

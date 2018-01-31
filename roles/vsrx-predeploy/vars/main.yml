@@ -1,0 +1,6 @@
+---
+# vars file for vsrx-predeploy
+netconf:
+    host: "{{ ansible_host }}"
+    username: root
+    password: Changeme-2018

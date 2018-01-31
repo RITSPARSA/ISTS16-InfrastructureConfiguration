@@ -1,0 +1,8 @@
+---
+# tasks file for vsrx-predeploy      
+- name: load default config
+  junos_config:
+      src: ../files/t0-config.conf
+      update: override
+      provider: "{{ netconf }}"
+

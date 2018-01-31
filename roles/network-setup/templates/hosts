@@ -1,7 +1,7 @@
  127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
  ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
-{% if whiteteam_hosts is not none %}
+{% if whiteteam_hosts is defined %}
     {% for ip, host in whiteteam_hosts.items() %}
 {{ ip }}    {{ host }}
     {% endfor %}

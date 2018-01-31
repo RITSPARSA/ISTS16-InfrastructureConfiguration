@@ -5,9 +5,9 @@
 - name: Configure Jenkins
   include_tasks: configure.yml
 
+- include_tasks: plugins2.yml
+
 - include_tasks: startup.yml
 - name: Waiting for start up
   pause:
    seconds: 20
-- include_tasks: plugins.yml
-- include_tasks: jobs.yml

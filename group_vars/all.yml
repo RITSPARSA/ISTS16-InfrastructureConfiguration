@@ -33,7 +33,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.254"
   crucis.team0.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.0.50"
     network: "10.2.0.0"
     netmask: "255.255.255.0"
@@ -107,7 +107,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.254"
   crucis.team1.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.1.50"
     network: "10.2.1.0"
     netmask: "255.255.255.0"
@@ -181,7 +181,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.254"
   crucis.team2.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.2.50"
     network: "10.2.2.0"
     netmask: "255.255.255.0"
@@ -255,7 +255,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.254"
   crucis.team3.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.3.50"
     network: "10.2.3.0"
     netmask: "255.255.255.0"
@@ -329,7 +329,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.254"
   crucis.team4.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.4.50"
     network: "10.2.4.0"
     netmask: "255.255.255.0"
@@ -403,7 +403,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.254"
   crucis.team5.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.5.50"
     network: "10.2.5.0"
     netmask: "255.255.255.0"
@@ -477,7 +477,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.254"
   crucis.team6.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.6.50"
     network: "10.2.6.0"
     netmask: "255.255.255.0"
@@ -551,7 +551,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.254"
   crucis.team7.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.7.50"
     network: "10.2.7.0"
     netmask: "255.255.255.0"
@@ -625,7 +625,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.254"
   crucis.team8.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.8.50"
     network: "10.2.8.0"
     netmask: "255.255.255.0"
@@ -699,7 +699,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.254"
   crucis.team9.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.9.50"
     network: "10.2.9.0"
     netmask: "255.255.255.0"
@@ -773,7 +773,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.254"
   crucis.team10.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.10.50"
     network: "10.2.10.0"
     netmask: "255.255.255.0"
@@ -847,7 +847,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.254"
   crucis.team11.ists:
-    team_id: "i"
+    team_id: "$i"
     ip: "10.2.11.50"
     network: "10.2.11.0"
     netmask: "255.255.255.0"

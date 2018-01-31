@@ -15,8 +15,8 @@ auto lo
 iface lo inet loopback
 
 # The primary network interface
-auto eth0
-iface eth0 inet static
+auto {{ ansible_default_ipv4.interface }}
+iface {{ ansible_default_ipv4.interface }} inet static
     address {{ ip }}
     netmask {{ netmask }}
     network {{ network }}

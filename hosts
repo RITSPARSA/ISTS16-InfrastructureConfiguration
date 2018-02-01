@@ -102,18 +102,18 @@ luna.team10.ists
 luna.team11.ists
 
 [Android]
-andromeda.team0.ists
-andromeda.team1.ists
-andromeda.team2.ists
-andromeda.team3.ists
-andromeda.team4.ists
-andromeda.team5.ists
-andromeda.team6.ists
-andromeda.team7.ists
-andromeda.team8.ists
-andromeda.team9.ists
-andromeda.team10.ists
-andromeda.team11.ists
+#andromeda.team0.ists
+#andromeda.team1.ists
+#andromeda.team2.ists
+#andromeda.team3.ists
+#andromeda.team4.ists
+#andromeda.team5.ists
+#andromeda.team6.ists
+#andromeda.team7.ists
+#andromeda.team8.ists
+#andromeda.team9.ists
+#andromeda.team10.ists
+#andromeda.team11.ists
 
 #
 #   Cloud

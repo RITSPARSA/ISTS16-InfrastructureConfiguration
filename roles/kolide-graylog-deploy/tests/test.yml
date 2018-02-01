@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - osquery-deploy
+    - kolide-graylog-deploy

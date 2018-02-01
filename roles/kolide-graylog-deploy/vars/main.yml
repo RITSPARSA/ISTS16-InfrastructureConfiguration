@@ -1,2 +1,13 @@
 ---
 # vars file for kolide-graylog-deploy
+# Graylog login
+graylog_admin_password: Changeme-2018
+
+# Cert generation
+cert_country: US
+cert_state: NY
+cert_local: Rochester
+cert_org: STARSA
+
+# Timezone
+timezone: America/New_York

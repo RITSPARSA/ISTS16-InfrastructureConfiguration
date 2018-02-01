@@ -1,0 +1,224 @@
+####################################################################
+# Setup NTP sync
+####################################################################
+- name: Setup NTP time sync
+  package: name={{ item }} 
+  state: installed
+  with_items:
+    - ntpdate
+    - ntp-doc
+- service:
+    name: ntpd
+    state: started
+    enabled: yes
+
+####################################################################
+#  Setup Timedatectl
+####################################################################
+- name: Set time to {{ timezone }}
+  shell: timedatectl set-ntp on && timedatectl set-timezone {{ timezone }}
+
+####################################################################
+# Update system
+####################################################################
+- yum:
+    name: '*'
+    state: latest
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+- package: name={{item}} state=installed
+  with_items:
+    - epel-release
+    - python-pip
+    - policycoreutils-python
+
+####################################################################
+# Disable SELinux
+####################################################################
+- selinux:
+    state: disabled
+
+####################################################################
+# Install/Setup MongoDB
+####################################################################
+- name: Add MongoDB repo
+  rpm_key:
+    state: present
+    key: https://www.mongodb.org/static/pgp/server-3.2.asc
+- yum_repository:
+    name: mongodb-org-3.2
+    description: MongoDB repository for 3.2 packages
+    baseurl: https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://www.mongodb.org/static/pgp/server-3.2.asc
+    state: present
+- name: Install/Setup MongoDB
+  package:
+    name: '{{ item }}'
+    state: installed
+  with_items:
+    - mongodb-org
+
+- name: Start Mongo service
+  service:
+    name: mongod
+    state: started
+    enabled: yes
+
+####################################################################
+# Install/Setup Elasticsearch
+####################################################################
+- name: Add Elastic repo
+  rpm_key:
+    state: present
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+- yum_repository:
+    name: elastic.co
+    description: Elasticsearch repository for 5.x packages
+    baseurl: https://artifacts.elastic.co/packages/5.x/yum
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Install/Setup Elasticsearch
+  yum: name={{item}} state=installed
+  with_items:
+    - elasticsearch
+    - java-1.8.0-openjdk-headless.x86_64
+    - curl
+
+- name: Rename Elasticsearch cluster name
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    regexp: '^cluster.name:'
+    line: 'cluster.name: graylog'
+
+- name: Make Elasticsearch public
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    regexp: '^#network.host:'
+    line: 'network.host: 0.0.0.0'
+
+- service:
+    name: elasticsearch
+    state: restarted
+    enabled: yes
+
+####################################################################
+# Install/Setup Graylog
+####################################################################
+- name: Download RPM
+  yum:
+    name: https://packages.graylog2.org/repo/packages/graylog-2.3-repository_latest.rpm
+    state: present
+
+- name: Install/Setup Graylog
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - graylog-server
+    - pwgen
+
+- name: Covert password to sha256 hash
+  shell: "echo -n {{ graylog_admin_password }} | sha256sum | awk '{print $1}'"
+  register: pass_contents
+
+- name: Set admin password
+  lineinfile:
+    path: /etc/graylog/server/server.conf
+    regexp: '^root_password_sha2 ='
+    line: "root_password_sha2 = {{ pass_contents.stdout }}"
+
+- name: Generate secret key
+  shell: "pwgen -s 96 1"
+  register: secret_key_content
+
+- name: Set secret key
+  shell: sed -i -e "s/password_secret =.*/password_secret = {{ secret_key_content.stdout }}/" /etc/graylog/server/server.conf
+
+- name: Start and Enable Graylog service
+  service:
+    name: graylog-server
+    state: restarted
+    enabled: yes
+
+####################################################################
+# Install/Setup Graylog slack plugin
+####################################################################
+- name: Download Graylog Slack plugin
+  get_url:
+    url: https://github.com/graylog-labs/graylog-plugin-slack/releases/download/2.4.0/graylog-plugin-slack-2.4.0.jar
+    dest: /usr/share/graylog-server/plugin/graylog-plugin-slack-2.4.0.jar
+    
+- name: Start and Enable Graylog service
+  service:
+    name: graylog-server
+    state: restarted
+    enabled: yes
+
+####################################################################
+# Install/Setup Nginx
+####################################################################
+- name: Install/Setup Nginx
+  package:
+    name: '{{ item }}'
+    state: installed
+  with_items:
+    - nginx
+
+- name: Copy Nginx config
+  template:
+    src: templates/nginx/nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: '0600'
+
+- file:
+    path: /etc/nginx/ssl
+    owner: root
+    group: root
+    state: directory
+
+- file:
+    path: /etc/nginx/ssl
+    state: directory
+    mode: 0755
+
+- name: Generate DH key
+  stat:
+    path: /etc/ssl/certs/dhparam.pem
+  register: stat_dhparam
+- shell: openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+  when: stat_dhparam.stat.exists == False
+
+- name: Generate cert
+  stat:
+    path: /etc/nginx/ssl/graylog.key
+  register: stat_dhparam
+- name: Create OpenSSL custom cert for Wazuh
+  shell: openssl req -new -nodes -x509 -days 3650 -subj "/C={{ cert_country }}/ST={{ cert_state }}/L={{ cert_local }}/O={{ cert_org }}/CN={{ ansible_hostname }}" -keyout /etc/nginx/ssl/graylog.key -out /etc/nginx/ssl/graylog.crt
+  when: stat_dhparam.stat.exists == False
+
+- template:
+    src: templates/nginx/nginx_graylog.conf
+    dest: /etc/nginx/conf.d/nginx_graylog.conf
+    owner: root
+    group: root
+    mode: '0600'
+
+- service:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+####################################################################
+# Setup FirewallD
+####################################################################
+- name: Disable FireallD
+  service:
+    name: firewalld
+    state: stopped
+    enabled: yes

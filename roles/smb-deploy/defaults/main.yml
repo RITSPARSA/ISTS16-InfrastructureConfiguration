@@ -1,0 +1,3 @@
+---
+# defaults file for smb-deploy
+share_directory: C:\shares\space_rocks

@@ -1,7 +1,30 @@
+---
 - hosts: Linux
   roles:
-    - packages
+    - packages-predeploy
 
 - hosts: FreeBSD
   roles:
     - jenkinsbsd-predeploy
+
+- hosts: all
+  roles:
+    - accounts-predeploy
+
+- hosts: Ubuntu
+  roles:
+    - ecommerce-predeploy
+
+- hosts: FreeBSD
+  roles:
+    - jenkinsbsd-predeploy
+
+- hosts: WindowsJenkins
+  roles:
+    - jenkinswin-predeploy
+
+- hosts: WindowsMail
+  roles:
+    - mail-predeploy
+
+

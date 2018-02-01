@@ -1,9 +1,0 @@
-
-- name: Install IIS 
-  win_feature: 
-    name: Web-server
-    state: present
-    include_sub_features: yes
-
-
-  

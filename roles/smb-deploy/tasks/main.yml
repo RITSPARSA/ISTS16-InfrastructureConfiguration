@@ -1,0 +1,12 @@
+- name: Create the directory
+  win_file:
+    path: C:\shares\space_rocks
+    state: directory
+
+- name: Make share
+  win_command: net share space_rocks=c:\shares\space_rocks /GRANT:Everyone,FULL
+
+- name: copy files to created share
+  win_copy: 
+    src: files/
+    dest: c:\shares\space_rocks

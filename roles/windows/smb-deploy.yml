@@ -1,0 +1,10 @@
+- name: Add smb share
+  win_share: 
+    name: Space Rocks
+    description: Everything space rocks
+    path: C:\shares\space_rocks
+    list: no
+    full: Administrators
+    read: #TODO
+    deny: #TODO
+    

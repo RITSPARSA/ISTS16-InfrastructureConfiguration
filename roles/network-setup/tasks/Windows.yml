@@ -1,0 +1,7 @@
+- hosts: Windows
+  gather_facts: no
+
+  tasks:
+      - name: Set static ip, mask, gateway, dns server for windows with ps
+        script: set-ip.ps1 "{{machines[inventory_hostname]['ip']}}" "{{machines[inventory_hostname]['gateway']}}" "{{hostnames['ad']}}.team{{machines[inventory_hostname]['team_id']}}.ists" 
+

@@ -1,8 +1,4 @@
 ---
-- hosts: all
-  roles:
-    - network-setup
-
 - hosts: WindowsAD
   roles:
     - dc-deploy

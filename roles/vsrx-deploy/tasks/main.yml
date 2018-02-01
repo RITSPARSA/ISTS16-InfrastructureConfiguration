@@ -10,9 +10,10 @@
 - name: deploy interface config and upstream gateway
   junos_config:
       lines:
-          - 'set interfaces ge-0/0/0.0 family inet address {{ machines[ansible_host].ip }}'
-          - 'delete interfaces ge-0/0/0.0 family inet dhcp'
-          - 'delete interfaces ge-0/0/0 disable'
-          - 'set interfaces ge-0/0/1.0 family inet address {{ machines[ansible_host].public_ip }}'
+          - 'delete interfaces ge-0/0/0 unit 0 family inet'
+          - 'delete interfaces ge-0/0/1 disable'
+          - 'delete interfaces ge-0/0/1 unit 0 family inet'
+          - 'set interfaces ge-0/0/0 unit 0 family inet address {{ machines[ansible_host].ip }}'
+          - 'set interfaces ge-0/0/1 unit 0 family inet address {{ machines[ansible_host].public_ip }}'
           - 'set routing-options static route 0.0.0.0/0 next-hop {{ machines[ansible_host].gateway }}'
       provider: "{{ netconf }}"

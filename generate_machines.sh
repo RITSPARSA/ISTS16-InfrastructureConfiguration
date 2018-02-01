@@ -70,7 +70,12 @@ for i in $(seq 0 11); do echo -e "
     netmask: \"255.255.255.0\"
     gateway: \"10.3.$i.254\"
     broadcast: \"10.3.$i.254\"
-
+  cygni.team$i.ists:
+    team_id: \"$i\"
+    ip: \"10.3.$i.254/24\"
+    public_ip: \"10.0.200.$[$i+64]/26\"
+    gateway: \"10.0.200.126\"
+   
 \n"; done
 
 echo -e "
@@ -85,4 +90,5 @@ hostnames:
   ftp: sirius
   db: sirius
   attack: persei
-  android: andromeda\n"
+  android: andromeda
+  router: cygni\n"

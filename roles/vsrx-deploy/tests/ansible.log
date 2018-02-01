@@ -1,0 +1,463 @@
+2018-01-31 08:32:53,060 p=20691 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:32:53,289 p=20691 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:32:53,298 p=20691 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:32:53,982 p=20691 u=koalatea |  ok: [vsrx]
+2018-01-31 08:32:53,997 p=20691 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:32:54,732 p=20790 u=koalatea |  creating new control socket for host 127.0.0.1:2222 as user root
+2018-01-31 08:32:54,732 p=20790 u=koalatea |  control socket path is /home/koalatea/.ansible/pc/fd3db432f3
+2018-01-31 08:32:54,733 p=20790 u=koalatea |  current working directory is /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests
+2018-01-31 08:32:54,733 p=20790 u=koalatea |  using connection plugin netconf
+2018-01-31 08:32:54,738 p=20790 u=koalatea |  failed to create control socket for host 127.0.0.1
+2018-01-31 08:32:54,739 p=20790 u=koalatea |  Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/connection/netconf.py", line 85, in <module>
+    from ncclient import manager
+  File "/usr/lib/python3.6/site-packages/ncclient/manager.py", line 22, in <module>
+    from ncclient import operations
+  File "/usr/lib/python3.6/site-packages/ncclient/operations/__init__.py", line 16, in <module>
+    from ncclient.operations.rpc import RPC, RPCReply, RPCError, RaiseMode
+  File "/usr/lib/python3.6/site-packages/ncclient/operations/rpc.py", line 19, in <module>
+    from ncclient.xml_ import *
+  File "/usr/lib/python3.6/site-packages/ncclient/xml_.py", line 24, in <module>
+    from lxml import etree
+ModuleNotFoundError: No module named 'lxml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib64/python3.6/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 675, in _load
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 205, in _call_with_frames_removed
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+ansible.errors.AnsibleError: ncclient is not installed
+
+2018-01-31 08:33:04,792 p=20691 u=koalatea |  fatal: [vsrx]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2018-01-31 08:33:04,794 p=20691 u=koalatea |  	to retry, use: --limit @/home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/test.retry
+
+2018-01-31 08:33:04,794 p=20691 u=koalatea |  PLAY RECAP *********************************************************************
+2018-01-31 08:33:04,794 p=20691 u=koalatea |  vsrx                       : ok=1    changed=0    unreachable=0    failed=1   
+2018-01-31 08:33:52,958 p=21242 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:33:53,197 p=21242 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:33:53,206 p=21242 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:33:53,966 p=21242 u=koalatea |  ok: [vsrx]
+2018-01-31 08:33:53,987 p=21242 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:33:54,742 p=21344 u=koalatea |  creating new control socket for host 127.0.0.1:2222 as user root
+2018-01-31 08:33:54,743 p=21344 u=koalatea |  control socket path is /home/koalatea/.ansible/pc/fd3db432f3
+2018-01-31 08:33:54,743 p=21344 u=koalatea |  current working directory is /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests
+2018-01-31 08:33:54,743 p=21344 u=koalatea |  using connection plugin netconf
+2018-01-31 08:33:54,796 p=21344 u=koalatea |  network_os is set to junos
+2018-01-31 08:33:54,809 p=21344 u=koalatea |  ssh connection done, stating ncclient
+2018-01-31 08:33:54,899 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6)
+2018-01-31 08:33:55,040 ncclient.transport.ssh Authentication (publickey) successful!
+2018-01-31 08:33:55,545 ncclient.transport.session initialized: session-id=1918 | server_capabilities=<dict_keyiterator object at 0x7f04c3cbdf48>
+2018-01-31 08:33:55,545 p=21344 u=koalatea |  ncclient manager object created successfully
+2018-01-31 08:33:55,551 p=21344 u=koalatea |  loaded netconf plugin for network_os junos
+2018-01-31 08:33:55,551 p=21344 u=koalatea |  connection established to 127.0.0.1 in 0:00:00.808450
+2018-01-31 08:33:55,551 p=21344 u=koalatea |  local socket is set to listening
+2018-01-31 08:33:55,741 p=21344 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:33:55,742 p=21344 u=koalatea |  socket operation is CONTEXT
+2018-01-31 08:33:55,743 p=21344 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:33:55,744 p=21344 u=koalatea |  socket operation is RUN
+2018-01-31 08:33:55,744 p=21344 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:33:56,117 p=21344 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:33:56,118 p=21344 u=koalatea |  socket operation is EXEC
+2018-01-31 08:33:56,118 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:33:56,173 p=21344 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:33:56,174 p=21344 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:33:56,175 p=21344 u=koalatea |  socket operation is EXEC
+2018-01-31 08:33:56,175 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:33:56,312 p=21344 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:33:56,339 p=21242 u=koalatea |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ValueError: Unicode strings with encoding declaration are not supported. Please use bytes input or XML fragments without declaration.
+2018-01-31 08:33:56,340 p=21242 u=koalatea |  fatal: [vsrx]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/tmp/ansible_53_u16ct/ansible_modlib.zip/ansible/module_utils/junos.py\", line 175, in locked_config\n  File \"/tmp/ansible_53_u16ct/ansible_modlib.zip/ansible/module_utils/junos.py\", line 165, in lock_configuration\n  File \"/tmp/ansible_53_u16ct/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 62, in send_request\n  File \"src/lxml/etree.pyx\", line 3230, in lxml.etree.fromstring (src/lxml/etree.c:81070)\n  File \"src/lxml/parser.pxi\", line 1866, in lxml.etree._parseMemoryDocument (src/lxml/etree.c:121191)\nValueError: Unicode strings with encoding declaration are not supported. Please use bytes input or XML fragments without declaration.\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/tmp/ansible_53_u16ct/ansible_module_junos_config.py\", line 402, in <module>\n    main()\n  File \"/tmp/ansible_53_u16ct/ansible_module_junos_config.py\", line 370, in main\n    with locked_config(module):\n  File \"/usr/lib64/python3.6/contextlib.py\", line 81, in __enter__\n    return next(self.gen)\n  File \"/tmp/ansible_53_u16ct/ansible_modlib.zip/ansible/module_utils/junos.py\", line 178, in locked_config\n  File \"/tmp/ansible_53_u16ct/ansible_modlib.zip/ansible/module_utils/junos.py\", line 169, in unlock_configuration\n  File \"/tmp/ansible_53_u16ct/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 62, in send_request\n  File \"src/lxml/etree.pyx\", line 3230, in lxml.etree.fromstring (src/lxml/etree.c:81070)\n  File \"src/lxml/parser.pxi\", line 1866, in lxml.etree._parseMemoryDocument (src/lxml/etree.c:121191)\nValueError: Unicode strings with encoding declaration are not supported. Please use bytes input or XML fragments without declaration.\n", "module_stdout": "", "msg": "MODULE FAILURE", "rc": 0}
+2018-01-31 08:33:56,341 p=21242 u=koalatea |  	to retry, use: --limit @/home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/test.retry
+
+2018-01-31 08:33:56,341 p=21242 u=koalatea |  PLAY RECAP *********************************************************************
+2018-01-31 08:33:56,341 p=21242 u=koalatea |  vsrx                       : ok=1    changed=0    unreachable=0    failed=1   
+2018-01-31 08:34:26,313 p=21344 u=koalatea |  persistent connection idle timeout triggered, timeout value is 30 secs
+2018-01-31 08:34:26,313 p=21344 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:34:26,313 p=21344 u=koalatea |  closing local listener
+2018-01-31 08:34:26,313 p=21344 u=koalatea |  closing the connection
+2018-01-31 08:34:26,313 ncclient.operations.rpc Requesting 'CloseSession'
+2018-01-31 08:34:26,411 p=21344 u=koalatea |  removing the local control socket
+2018-01-31 08:34:26,411 p=21344 u=koalatea |  shutdown complete
+2018-01-31 08:34:26,502 p=21344 u=koalatea |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 132, in run
+    (s, addr) = self.socket.accept()
+  File "/usr/lib64/python3.6/socket.py", line 205, in accept
+    fd, addr = self._accept()
+OSError: [Errno 9] Bad file descriptor
+
+2018-01-31 08:34:26,502 p=21344 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:34:26,502 p=21344 u=koalatea |  persistent connection is not active
+2018-01-31 08:34:26,502 p=21344 u=koalatea |  shutdown local socket, connection was active for 0:00:31.759186 secs
+2018-01-31 08:34:27,380 p=21696 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:34:27,610 p=21696 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:34:27,619 p=21696 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:34:28,298 p=21696 u=koalatea |  ok: [vsrx]
+2018-01-31 08:34:28,312 p=21696 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:34:29,070 p=21795 u=koalatea |  creating new control socket for host 127.0.0.1:2222 as user root
+2018-01-31 08:34:29,070 p=21795 u=koalatea |  control socket path is /home/koalatea/.ansible/pc/fd3db432f3
+2018-01-31 08:34:29,070 p=21795 u=koalatea |  current working directory is /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests
+2018-01-31 08:34:29,070 p=21795 u=koalatea |  using connection plugin netconf
+2018-01-31 08:34:29,076 p=21795 u=koalatea |  failed to create control socket for host 127.0.0.1
+2018-01-31 08:34:29,076 p=21795 u=koalatea |  Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/connection/netconf.py", line 85, in <module>
+    from ncclient import manager
+  File "/usr/lib/python3.6/site-packages/ncclient/manager.py", line 22, in <module>
+    from ncclient import operations
+  File "/usr/lib/python3.6/site-packages/ncclient/operations/__init__.py", line 16, in <module>
+    from ncclient.operations.rpc import RPC, RPCReply, RPCError, RaiseMode
+  File "/usr/lib/python3.6/site-packages/ncclient/operations/rpc.py", line 19, in <module>
+    from ncclient.xml_ import *
+  File "/usr/lib/python3.6/site-packages/ncclient/xml_.py", line 24, in <module>
+    from lxml import etree
+ModuleNotFoundError: No module named 'lxml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib64/python3.6/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 675, in _load
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 205, in _call_with_frames_removed
+  File "/usr/lib/python3.6/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+ansible.errors.AnsibleError: ncclient is not installed
+
+2018-01-31 08:34:39,133 p=21696 u=koalatea |  fatal: [vsrx]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2018-01-31 08:34:39,134 p=21696 u=koalatea |  	to retry, use: --limit @/home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/test.retry
+
+2018-01-31 08:34:39,134 p=21696 u=koalatea |  PLAY RECAP *********************************************************************
+2018-01-31 08:34:39,134 p=21696 u=koalatea |  vsrx                       : ok=1    changed=0    unreachable=0    failed=1   
+2018-01-31 08:35:32,799 p=22168 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:35:33,043 p=22168 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:35:33,052 p=22168 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:35:33,722 p=22168 u=koalatea |  ok: [vsrx]
+2018-01-31 08:35:33,742 p=22168 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:35:34,482 p=22267 u=koalatea |  creating new control socket for host 127.0.0.1:2222 as user root
+2018-01-31 08:35:34,483 p=22267 u=koalatea |  control socket path is /home/koalatea/.ansible/pc/fd3db432f3
+2018-01-31 08:35:34,483 p=22267 u=koalatea |  current working directory is /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests
+2018-01-31 08:35:34,483 p=22267 u=koalatea |  using connection plugin netconf
+2018-01-31 08:35:34,536 p=22267 u=koalatea |  network_os is set to junos
+2018-01-31 08:35:34,551 p=22267 u=koalatea |  ssh connection done, stating ncclient
+2018-01-31 08:35:34,640 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6)
+2018-01-31 08:35:34,760 ncclient.transport.ssh Authentication (publickey) successful!
+2018-01-31 08:35:35,222 ncclient.transport.session initialized: session-id=1926 | server_capabilities=<dict_keyiterator object at 0x7f80b69f5f48>
+2018-01-31 08:35:35,222 p=22267 u=koalatea |  ncclient manager object created successfully
+2018-01-31 08:35:35,230 p=22267 u=koalatea |  loaded netconf plugin for network_os junos
+2018-01-31 08:35:35,230 p=22267 u=koalatea |  connection established to 127.0.0.1 in 0:00:00.747108
+2018-01-31 08:35:35,230 p=22267 u=koalatea |  local socket is set to listening
+2018-01-31 08:35:35,482 p=22267 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:35:35,483 p=22267 u=koalatea |  socket operation is CONTEXT
+2018-01-31 08:35:35,484 p=22267 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:35:35,484 p=22267 u=koalatea |  socket operation is RUN
+2018-01-31 08:35:35,484 p=22267 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:35:35,865 p=22267 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:35:35,865 p=22267 u=koalatea |  socket operation is EXEC
+2018-01-31 08:35:35,865 p=22267 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:35:35,866 p=22267 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:35:35,866 p=22267 u=koalatea |  socket operation is EXEC
+2018-01-31 08:35:35,866 p=22267 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:35:35,890 p=22168 u=koalatea |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: lxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 1, column 1
+2018-01-31 08:35:35,891 p=22168 u=koalatea |  fatal: [vsrx]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/tmp/ansible_6gapw9eh/ansible_modlib.zip/ansible/module_utils/junos.py\", line 175, in locked_config\n  File \"/tmp/ansible_6gapw9eh/ansible_modlib.zip/ansible/module_utils/junos.py\", line 165, in lock_configuration\n  File \"/tmp/ansible_6gapw9eh/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 45, in send_request\n  File \"src/lxml/etree.pyx\", line 3230, in lxml.etree.fromstring (src/lxml/etree.c:81070)\n  File \"src/lxml/parser.pxi\", line 1871, in lxml.etree._parseMemoryDocument (src/lxml/etree.c:121250)\n  File \"src/lxml/parser.pxi\", line 1752, in lxml.etree._parseDoc (src/lxml/etree.c:119804)\n  File \"src/lxml/parser.pxi\", line 1066, in lxml.etree._BaseParser._parseUnicodeDoc (src/lxml/etree.c:113546)\n  File \"src/lxml/parser.pxi\", line 598, in lxml.etree._ParserContext._handleParseResultDoc (src/lxml/etree.c:107738)\n  File \"src/lxml/parser.pxi\", line 709, in lxml.etree._handleParseResult (src/lxml/etree.c:109447)\n  File \"src/lxml/parser.pxi\", line 638, in lxml.etree._raiseParseError (src/lxml/etree.c:108301)\n  File \"<string>\", line 1\nlxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 1, column 1\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/tmp/ansible_6gapw9eh/ansible_module_junos_config.py\", line 402, in <module>\n    main()\n  File \"/tmp/ansible_6gapw9eh/ansible_module_junos_config.py\", line 370, in main\n    with locked_config(module):\n  File \"/usr/lib64/python3.6/contextlib.py\", line 81, in __enter__\n    return next(self.gen)\n  File \"/tmp/ansible_6gapw9eh/ansible_modlib.zip/ansible/module_utils/junos.py\", line 178, in locked_config\n  File \"/tmp/ansible_6gapw9eh/ansible_modlib.zip/ansible/module_utils/junos.py\", line 169, in unlock_configuration\n  File \"/tmp/ansible_6gapw9eh/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 45, in send_request\n  File \"src/lxml/etree.pyx\", line 3230, in lxml.etree.fromstring (src/lxml/etree.c:81070)\n  File \"src/lxml/parser.pxi\", line 1871, in lxml.etree._parseMemoryDocument (src/lxml/etree.c:121250)\n  File \"src/lxml/parser.pxi\", line 1752, in lxml.etree._parseDoc (src/lxml/etree.c:119804)\n  File \"src/lxml/parser.pxi\", line 1066, in lxml.etree._BaseParser._parseUnicodeDoc (src/lxml/etree.c:113546)\n  File \"src/lxml/parser.pxi\", line 598, in lxml.etree._ParserContext._handleParseResultDoc (src/lxml/etree.c:107738)\n  File \"src/lxml/parser.pxi\", line 709, in lxml.etree._handleParseResult (src/lxml/etree.c:109447)\n  File \"src/lxml/parser.pxi\", line 638, in lxml.etree._raiseParseError (src/lxml/etree.c:108301)\n  File \"<string>\", line 1\nlxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 1, column 1\n", "module_stdout": "", "msg": "MODULE FAILURE", "rc": 0}
+2018-01-31 08:35:35,892 p=22168 u=koalatea |  	to retry, use: --limit @/home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/test.retry
+
+2018-01-31 08:35:35,892 p=22168 u=koalatea |  PLAY RECAP *********************************************************************
+2018-01-31 08:35:35,892 p=22168 u=koalatea |  vsrx                       : ok=1    changed=0    unreachable=0    failed=1   
+2018-01-31 08:36:05,866 p=22267 u=koalatea |  persistent connection idle timeout triggered, timeout value is 30 secs
+2018-01-31 08:36:05,866 p=22267 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:36:05,866 p=22267 u=koalatea |  closing local listener
+2018-01-31 08:36:05,866 p=22267 u=koalatea |  closing the connection
+2018-01-31 08:36:05,867 ncclient.operations.rpc Requesting 'CloseSession'
+2018-01-31 08:36:05,921 p=22267 u=koalatea |  removing the local control socket
+2018-01-31 08:36:05,921 p=22267 u=koalatea |  shutdown complete
+2018-01-31 08:36:05,922 p=22267 u=koalatea |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 132, in run
+    (s, addr) = self.socket.accept()
+  File "/usr/lib64/python3.6/socket.py", line 205, in accept
+    fd, addr = self._accept()
+OSError: [Errno 9] Bad file descriptor
+
+2018-01-31 08:36:05,922 p=22267 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:36:05,922 p=22267 u=koalatea |  persistent connection is not active
+2018-01-31 08:36:05,922 p=22267 u=koalatea |  shutdown local socket, connection was active for 0:00:31.439415 secs
+2018-01-31 08:36:08,202 p=22667 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:36:09,025 p=22667 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:36:09,123 p=22667 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:36:09,895 p=22667 u=koalatea |  ok: [vsrx]
+2018-01-31 08:36:10,092 p=22667 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:36:10,950 p=22768 u=koalatea |  creating new control socket for host 127.0.0.1:2222 as user root
+2018-01-31 08:36:10,951 p=22768 u=koalatea |  control socket path is /home/koalatea/.ansible/pc/fd3db432f3
+2018-01-31 08:36:10,951 p=22768 u=koalatea |  current working directory is /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests
+2018-01-31 08:36:10,951 p=22768 u=koalatea |  using connection plugin netconf
+2018-01-31 08:36:11,151 p=22768 u=koalatea |  network_os is set to junos
+2018-01-31 08:36:11,163 p=22768 u=koalatea |  ssh connection done, stating ncclient
+2018-01-31 08:36:11,240 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6)
+2018-01-31 08:36:11,400 ncclient.transport.ssh Authentication (publickey) successful!
+2018-01-31 08:36:11,871 ncclient.transport.session initialized: session-id=1931 | server_capabilities=<dict_keyiterator object at 0x7f18f94aaa98>
+2018-01-31 08:36:11,871 p=22768 u=koalatea |  ncclient manager object created successfully
+2018-01-31 08:36:12,042 p=22768 u=koalatea |  loaded netconf plugin for network_os junos
+2018-01-31 08:36:12,042 p=22768 u=koalatea |  connection established to 127.0.0.1 in 0:00:01.091152
+2018-01-31 08:36:12,042 p=22768 u=koalatea |  local socket is set to listening
+2018-01-31 08:36:12,950 p=22768 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:36:12,951 p=22768 u=koalatea |  socket operation is CONTEXT
+2018-01-31 08:36:12,951 p=22768 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:36:12,952 p=22768 u=koalatea |  socket operation is RUN
+2018-01-31 08:36:12,952 p=22768 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:36:13,363 p=22768 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:36:13,363 p=22768 u=koalatea |  socket operation is EXEC
+2018-01-31 08:36:13,363 p=22768 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:36:13,363 p=22768 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:36:13,364 p=22768 u=koalatea |  socket operation is EXEC
+2018-01-31 08:36:13,364 p=22768 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:36:13,388 p=22667 u=koalatea |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: lxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 1, column 1
+2018-01-31 08:36:13,389 p=22667 u=koalatea |  fatal: [vsrx]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/tmp/ansible__klqtjg0/ansible_modlib.zip/ansible/module_utils/junos.py\", line 175, in locked_config\n  File \"/tmp/ansible__klqtjg0/ansible_modlib.zip/ansible/module_utils/junos.py\", line 165, in lock_configuration\n  File \"/tmp/ansible__klqtjg0/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 44, in send_request\n  File \"src/lxml/etree.pyx\", line 3230, in lxml.etree.fromstring (src/lxml/etree.c:81070)\n  File \"src/lxml/parser.pxi\", line 1871, in lxml.etree._parseMemoryDocument (src/lxml/etree.c:121250)\n  File \"src/lxml/parser.pxi\", line 1752, in lxml.etree._parseDoc (src/lxml/etree.c:119804)\n  File \"src/lxml/parser.pxi\", line 1066, in lxml.etree._BaseParser._parseUnicodeDoc (src/lxml/etree.c:113546)\n  File \"src/lxml/parser.pxi\", line 598, in lxml.etree._ParserContext._handleParseResultDoc (src/lxml/etree.c:107738)\n  File \"src/lxml/parser.pxi\", line 709, in lxml.etree._handleParseResult (src/lxml/etree.c:109447)\n  File \"src/lxml/parser.pxi\", line 638, in lxml.etree._raiseParseError (src/lxml/etree.c:108301)\n  File \"<string>\", line 1\nlxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 1, column 1\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/tmp/ansible__klqtjg0/ansible_module_junos_config.py\", line 402, in <module>\n    main()\n  File \"/tmp/ansible__klqtjg0/ansible_module_junos_config.py\", line 370, in main\n    with locked_config(module):\n  File \"/usr/lib64/python3.6/contextlib.py\", line 81, in __enter__\n    return next(self.gen)\n  File \"/tmp/ansible__klqtjg0/ansible_modlib.zip/ansible/module_utils/junos.py\", line 178, in locked_config\n  File \"/tmp/ansible__klqtjg0/ansible_modlib.zip/ansible/module_utils/junos.py\", line 169, in unlock_configuration\n  File \"/tmp/ansible__klqtjg0/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 44, in send_request\n  File \"src/lxml/etree.pyx\", line 3230, in lxml.etree.fromstring (src/lxml/etree.c:81070)\n  File \"src/lxml/parser.pxi\", line 1871, in lxml.etree._parseMemoryDocument (src/lxml/etree.c:121250)\n  File \"src/lxml/parser.pxi\", line 1752, in lxml.etree._parseDoc (src/lxml/etree.c:119804)\n  File \"src/lxml/parser.pxi\", line 1066, in lxml.etree._BaseParser._parseUnicodeDoc (src/lxml/etree.c:113546)\n  File \"src/lxml/parser.pxi\", line 598, in lxml.etree._ParserContext._handleParseResultDoc (src/lxml/etree.c:107738)\n  File \"src/lxml/parser.pxi\", line 709, in lxml.etree._handleParseResult (src/lxml/etree.c:109447)\n  File \"src/lxml/parser.pxi\", line 638, in lxml.etree._raiseParseError (src/lxml/etree.c:108301)\n  File \"<string>\", line 1\nlxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 1, column 1\n", "module_stdout": "", "msg": "MODULE FAILURE", "rc": 0}
+2018-01-31 08:36:13,390 p=22667 u=koalatea |  	to retry, use: --limit @/home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/test.retry
+
+2018-01-31 08:36:13,390 p=22667 u=koalatea |  PLAY RECAP *********************************************************************
+2018-01-31 08:36:13,390 p=22667 u=koalatea |  vsrx                       : ok=1    changed=0    unreachable=0    failed=1   
+2018-01-31 08:36:32,889 p=23121 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:36:33,140 p=23121 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:36:33,149 p=23121 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:36:33,831 p=23121 u=koalatea |  ok: [vsrx]
+2018-01-31 08:36:33,848 p=23121 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:36:34,544 p=23220 u=koalatea |  re-using existing socket for root@127.0.0.1:2222
+2018-01-31 08:36:34,544 p=22768 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:36:34,544 p=22768 u=koalatea |  socket operation is CONTEXT
+2018-01-31 08:36:34,545 p=22768 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:36:34,545 p=22768 u=koalatea |  socket operation is RUN
+2018-01-31 08:36:34,545 p=22768 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:36:34,899 p=22768 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:36:34,900 p=22768 u=koalatea |  socket operation is EXEC
+2018-01-31 08:36:34,900 p=22768 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:36:34,900 p=22768 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:36:34,900 p=22768 u=koalatea |  socket operation is EXEC
+2018-01-31 08:36:34,900 p=22768 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:36:35,024 p=23121 u=koalatea |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: xml.etree.ElementTree.ParseError: syntax error: line 1, column 0
+2018-01-31 08:36:35,024 p=23121 u=koalatea |  fatal: [vsrx]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/tmp/ansible_99fuu1u1/ansible_modlib.zip/ansible/module_utils/junos.py\", line 175, in locked_config\n  File \"/tmp/ansible_99fuu1u1/ansible_modlib.zip/ansible/module_utils/junos.py\", line 165, in lock_configuration\n  File \"/tmp/ansible_99fuu1u1/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 44, in send_request\n  File \"/usr/lib64/python3.6/xml/etree/ElementTree.py\", line 1314, in XML\n    parser.feed(text)\nxml.etree.ElementTree.ParseError: syntax error: line 1, column 0\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/tmp/ansible_99fuu1u1/ansible_module_junos_config.py\", line 402, in <module>\n    main()\n  File \"/tmp/ansible_99fuu1u1/ansible_module_junos_config.py\", line 370, in main\n    with locked_config(module):\n  File \"/usr/lib64/python3.6/contextlib.py\", line 81, in __enter__\n    return next(self.gen)\n  File \"/tmp/ansible_99fuu1u1/ansible_modlib.zip/ansible/module_utils/junos.py\", line 178, in locked_config\n  File \"/tmp/ansible_99fuu1u1/ansible_modlib.zip/ansible/module_utils/junos.py\", line 169, in unlock_configuration\n  File \"/tmp/ansible_99fuu1u1/ansible_modlib.zip/ansible/module_utils/netconf.py\", line 44, in send_request\n  File \"/usr/lib64/python3.6/xml/etree/ElementTree.py\", line 1314, in XML\n    parser.feed(text)\nxml.etree.ElementTree.ParseError: syntax error: line 1, column 0\n", "module_stdout": "", "msg": "MODULE FAILURE", "rc": 0}
+2018-01-31 08:36:35,026 p=23121 u=koalatea |  	to retry, use: --limit @/home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/test.retry
+
+2018-01-31 08:36:35,026 p=23121 u=koalatea |  PLAY RECAP *********************************************************************
+2018-01-31 08:36:35,026 p=23121 u=koalatea |  vsrx                       : ok=1    changed=0    unreachable=0    failed=1   
+2018-01-31 08:37:04,901 p=22768 u=koalatea |  persistent connection idle timeout triggered, timeout value is 30 secs
+2018-01-31 08:37:04,901 p=22768 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:37:04,902 p=22768 u=koalatea |  closing local listener
+2018-01-31 08:37:04,902 p=22768 u=koalatea |  closing the connection
+2018-01-31 08:37:04,902 ncclient.operations.rpc Requesting 'CloseSession'
+2018-01-31 08:37:05,034 p=22768 u=koalatea |  removing the local control socket
+2018-01-31 08:37:05,034 p=22768 u=koalatea |  shutdown complete
+2018-01-31 08:37:05,146 p=22768 u=koalatea |  Traceback (most recent call last):
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 132, in run
+    (s, addr) = self.socket.accept()
+  File "/usr/lib64/python3.5/socket.py", line 195, in accept
+    fd, addr = self._accept()
+OSError: [Errno 9] Bad file descriptor
+
+2018-01-31 08:37:05,146 p=22768 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:37:05,146 p=22768 u=koalatea |  persistent connection is not active
+2018-01-31 08:37:05,146 p=22768 u=koalatea |  shutdown local socket, connection was active for 0:00:54.195391 secs
+2018-01-31 08:39:47,518 p=23647 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:39:47,751 p=23647 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:39:47,759 p=23647 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:39:48,433 p=23647 u=koalatea |  ok: [vsrx]
+2018-01-31 08:39:48,451 p=23647 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:39:49,153 p=23746 u=koalatea |  creating new control socket for host 127.0.0.1:2222 as user root
+2018-01-31 08:39:49,153 p=23746 u=koalatea |  control socket path is /home/koalatea/.ansible/pc/fd3db432f3
+2018-01-31 08:39:49,154 p=23746 u=koalatea |  current working directory is /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests
+2018-01-31 08:39:49,154 p=23746 u=koalatea |  using connection plugin netconf
+2018-01-31 08:39:49,217 p=23746 u=koalatea |  network_os is set to junos
+2018-01-31 08:39:49,230 p=23746 u=koalatea |  ssh connection done, stating ncclient
+2018-01-31 08:39:49,301 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6)
+2018-01-31 08:39:49,432 ncclient.transport.ssh Authentication (publickey) successful!
+2018-01-31 08:39:49,876 ncclient.transport.session initialized: session-id=1936 | server_capabilities=<dict_keyiterator object at 0x7f8e35b25a98>
+2018-01-31 08:39:49,876 p=23746 u=koalatea |  ncclient manager object created successfully
+2018-01-31 08:39:49,882 p=23746 u=koalatea |  loaded netconf plugin for network_os junos
+2018-01-31 08:39:49,882 p=23746 u=koalatea |  connection established to 127.0.0.1 in 0:00:00.728554
+2018-01-31 08:39:49,882 p=23746 u=koalatea |  local socket is set to listening
+2018-01-31 08:39:50,153 p=23746 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:39:50,153 p=23746 u=koalatea |  socket operation is CONTEXT
+2018-01-31 08:39:50,154 p=23746 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:39:50,155 p=23746 u=koalatea |  socket operation is RUN
+2018-01-31 08:39:50,155 p=23746 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:39:50,519 p=23746 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:39:50,519 p=23746 u=koalatea |  socket operation is EXEC
+2018-01-31 08:39:50,549 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:39:50,595 p=23746 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:39:50,596 p=23746 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:39:50,596 p=23746 u=koalatea |  socket operation is EXEC
+2018-01-31 08:39:50,597 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:39:50,778 p=23746 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:39:50,779 p=23746 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:39:50,779 p=23746 u=koalatea |  socket operation is EXEC
+2018-01-31 08:39:50,780 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:39:51,003 p=23746 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:39:51,005 p=23746 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:39:51,005 p=23746 u=koalatea |  socket operation is EXEC
+2018-01-31 08:39:51,005 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:39:53,233 p=23746 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:39:53,234 p=23746 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:39:53,234 p=23746 u=koalatea |  socket operation is EXEC
+2018-01-31 08:39:53,235 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:39:53,513 p=23746 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:39:53,513 p=23746 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:39:53,514 p=23746 u=koalatea |  socket operation is EXEC
+2018-01-31 08:39:53,514 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:40:03,514 p=23746 u=koalatea |  command timeout triggered, timeout value is 10 secs
+2018-01-31 08:40:03,514 p=23746 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:40:03,515 p=23746 u=koalatea |  closing local listener
+2018-01-31 08:40:03,515 p=23746 u=koalatea |  closing the connection
+2018-01-31 08:40:03,516 ncclient.operations.rpc Requesting 'CloseSession'
+2018-01-31 08:40:13,517 p=23746 u=koalatea |  removing the local control socket
+2018-01-31 08:40:13,518 p=23746 u=koalatea |  shutdown complete
+2018-01-31 08:40:13,518 p=23746 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:40:13,518 p=23746 u=koalatea |  persistent connection is not active
+2018-01-31 08:40:13,518 p=23746 u=koalatea |  shutdown local socket, connection was active for 0:00:24.364608 secs
+Traceback (most recent call last):
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 155, in run
+    rc, stdout, stderr = method(data)
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 217, in do_EXEC
+    return self.connection.exec_command(cmd)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ansible/plugins/connection/__init__.py", line 53, in wrapped
+    return func(self, *args, **kwargs)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ansible/plugins/connection/netconf.py", line 214, in exec_command
+    reply = self._manager.rpc(req)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/manager.py", line 172, in wrapper
+    return self.execute(op_cls, *args, **kwds)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/manager.py", line 232, in execute
+    raise_mode=self._raise_mode).request(*args, **kwds)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 44, in request
+    return self._request(rpc)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/operations/rpc.py", line 326, in _request
+    raise self._error
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/transport/ssh.py", line 538, in run
+    raise SessionCloseError(self._buffer.getvalue())
+ncclient.transport.errors.SessionCloseError: Unexpected session close
+IN_BUFFER: `b'\n<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/12.1X47/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:3b0ed847-e8e2-4be8-a6ab-3e7cf2d2bd99">\n'`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 388, in <module>
+    main()
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 327, in main
+    server.run()
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 169, in run
+    if e.errno != errno.EINTR:
+AttributeError: 'SessionCloseError' object has no attribute 'errno'
+2018-01-31 08:40:13,700 p=23647 u=koalatea |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: FileNotFoundError: [Errno 2] No such file or directory
+2018-01-31 08:40:13,700 p=23647 u=koalatea |  fatal: [vsrx]: FAILED! => {"changed": false, "err": "[Errno 2] No such file or directory", "msg": "unable to connect to socket"}
+2018-01-31 08:40:13,702 p=23647 u=koalatea |  	to retry, use: --limit @/home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/test.retry
+
+2018-01-31 08:40:13,702 p=23647 u=koalatea |  PLAY RECAP *********************************************************************
+2018-01-31 08:40:13,702 p=23647 u=koalatea |  vsrx                       : ok=1    changed=0    unreachable=0    failed=1   
+2018-01-31 08:44:39,443 p=27819 u=koalatea |  Using /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests/ansible.cfg as config file
+2018-01-31 08:44:39,679 p=27819 u=koalatea |  PLAY [all] *********************************************************************
+2018-01-31 08:44:39,687 p=27819 u=koalatea |  TASK [Gathering Facts] *********************************************************
+2018-01-31 08:44:40,364 p=27819 u=koalatea |  ok: [vsrx]
+2018-01-31 08:44:40,383 p=27819 u=koalatea |  TASK [../../vsrx-deploy : deploy interface config and upstream gateway] ********
+2018-01-31 08:44:41,077 p=27918 u=koalatea |  creating new control socket for host 127.0.0.1:2222 as user root
+2018-01-31 08:44:41,078 p=27918 u=koalatea |  control socket path is /home/koalatea/.ansible/pc/fd3db432f3
+2018-01-31 08:44:41,078 p=27918 u=koalatea |  current working directory is /home/koalatea/projects/ists/ISTS16-InfrastructureConfiguration/roles/vsrx-deploy/tests
+2018-01-31 08:44:41,078 p=27918 u=koalatea |  using connection plugin netconf
+2018-01-31 08:44:41,138 p=27918 u=koalatea |  network_os is set to junos
+2018-01-31 08:44:41,152 p=27918 u=koalatea |  ssh connection done, stating ncclient
+2018-01-31 08:44:41,226 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6)
+2018-01-31 08:44:41,357 ncclient.transport.ssh Authentication (publickey) successful!
+2018-01-31 08:44:41,859 ncclient.transport.session initialized: session-id=1918 | server_capabilities=<dict_keyiterator object at 0x7fbaa4df6a98>
+2018-01-31 08:44:41,860 p=27918 u=koalatea |  ncclient manager object created successfully
+2018-01-31 08:44:41,862 p=27918 u=koalatea |  loaded netconf plugin for network_os junos
+2018-01-31 08:44:41,862 p=27918 u=koalatea |  connection established to 127.0.0.1 in 0:00:00.784177
+2018-01-31 08:44:41,862 p=27918 u=koalatea |  local socket is set to listening
+2018-01-31 08:44:42,077 p=27918 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:44:42,078 p=27918 u=koalatea |  socket operation is CONTEXT
+2018-01-31 08:44:42,079 p=27918 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:44:42,080 p=27918 u=koalatea |  socket operation is RUN
+2018-01-31 08:44:42,080 p=27918 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:44:42,443 p=27918 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:44:42,444 p=27918 u=koalatea |  socket operation is EXEC
+2018-01-31 08:44:42,444 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:44:42,481 p=27918 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:44:42,482 p=27918 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:44:42,482 p=27918 u=koalatea |  socket operation is EXEC
+2018-01-31 08:44:42,482 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:44:42,626 p=27918 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:44:42,627 p=27918 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:44:42,627 p=27918 u=koalatea |  socket operation is EXEC
+2018-01-31 08:44:42,627 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:44:42,870 p=27918 u=koalatea |  socket operation completed with rc 1
+2018-01-31 08:44:42,871 p=27918 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:44:42,872 p=27918 u=koalatea |  socket operation is EXEC
+2018-01-31 08:44:42,872 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:44:45,120 p=27918 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:44:45,121 p=27918 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:44:45,121 p=27918 u=koalatea |  socket operation is EXEC
+2018-01-31 08:44:45,121 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:44:45,398 p=27918 u=koalatea |  socket operation completed with rc 0
+2018-01-31 08:44:45,399 p=27918 u=koalatea |  incoming request accepted on persistent socket
+2018-01-31 08:44:45,399 p=27918 u=koalatea |  socket operation is EXEC
+2018-01-31 08:44:45,399 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2018-01-31 08:44:55,399 p=27918 u=koalatea |  command timeout triggered, timeout value is 10 secs
+2018-01-31 08:44:55,399 p=27918 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:44:55,399 p=27918 u=koalatea |  closing local listener
+2018-01-31 08:44:55,399 p=27918 u=koalatea |  closing the connection
+2018-01-31 08:44:55,400 ncclient.operations.rpc Requesting 'CloseSession'
+2018-01-31 08:45:03,259 p=27819 u=koalatea |   [ERROR]: User interrupted execution
+
+2018-01-31 08:45:05,400 p=27918 u=koalatea |  removing the local control socket
+2018-01-31 08:45:05,401 p=27918 u=koalatea |  shutdown complete
+2018-01-31 08:45:05,402 p=27918 u=koalatea |  shutdown persistent connection requested
+2018-01-31 08:45:05,402 p=27918 u=koalatea |  persistent connection is not active
+2018-01-31 08:45:05,402 p=27918 u=koalatea |  shutdown local socket, connection was active for 0:00:24.323941 secs
+Traceback (most recent call last):
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 155, in run
+    rc, stdout, stderr = method(data)
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 217, in do_EXEC
+    return self.connection.exec_command(cmd)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ansible/plugins/connection/__init__.py", line 53, in wrapped
+    return func(self, *args, **kwargs)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ansible/plugins/connection/netconf.py", line 214, in exec_command
+    reply = self._manager.rpc(req)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/manager.py", line 172, in wrapper
+    return self.execute(op_cls, *args, **kwds)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/manager.py", line 232, in execute
+    raise_mode=self._raise_mode).request(*args, **kwds)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 44, in request
+    return self._request(rpc)
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/operations/rpc.py", line 326, in _request
+    raise self._error
+  File "/home/koalatea/.virtualenvs/ansible-test/lib/python3.5/site-packages/ncclient/transport/ssh.py", line 538, in run
+    raise SessionCloseError(self._buffer.getvalue())
+ncclient.transport.errors.SessionCloseError: Unexpected session close
+IN_BUFFER: `b'\n<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/12.1X47/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:b75dc960-6073-4412-9712-5187d4db5bc5">\n'`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 388, in <module>
+    main()
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 327, in main
+    server.run()
+  File "/home/koalatea/.virtualenvs/ansible-test/bin/ansible-connection", line 169, in run
+    if e.errno != errno.EINTR:
+AttributeError: 'SessionCloseError' object has no attribute 'errno'

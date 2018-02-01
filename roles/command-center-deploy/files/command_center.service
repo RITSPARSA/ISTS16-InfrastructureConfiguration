@@ -1,0 +1,14 @@
+[Unit]
+Description=Runs the Command Center web app
+After=network.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/var/www/CommandCenterWebApp/CommandCenter.py
+WorkingDirectory=/var/www/CommandCenterWebApp/
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

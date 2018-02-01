@@ -1,0 +1,31 @@
+---
+# tasks file for command-center-deploy
+ - name: upload deploy key
+   copy: 
+     src: ./files/deploy
+     dest: /root/.ssh/deploy
+     mode: 0600
+     owner: root
+     group: root
+
+ - name: download repository from git
+   git:
+     repo: https://github.com/RITSPARSA/ISTS16-InfrastructureConfiguration
+     path: /var/www/
+     key_file: /root/.ssh/deploy
+
+ - name: install pip
+   package: 
+     name: python-pip
+     state: installed
+
+ - name: install requirements
+   pip: 
+     name: "{{ item }}"
+   with_items:
+     - requests
+     - flask
+
+# - name: upload service file
+   
+ 

@@ -18,14 +18,14 @@ None
 Dependencies
 ------------
 
-A handler for rebooting should be configured in the directory structure
+None
 
 Example Playbook
 ----------------
 
 - hosts: voip
   roles:
-    - { asterisk }
+    - { role: asterisk }
 
 Author
 ------

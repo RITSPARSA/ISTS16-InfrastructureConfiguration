@@ -14,19 +14,26 @@
 - name: Disable SELinux
   selinux:
     state: disabled
-  notify: reboot server # machine needs to restart for selinux changes to take effect
-- name: download latest asterisk # currently version 15.1.5
+- name: Reboot Server
+  command: /sbin/shutdown -r +1 "Ansible changes require reboot"
+  async: 0
+  poll: 0
+  ignore_errors: true
+- name: Wait for server to come back up
+  pause:
+    minutes: 2
+    prompt: "Rebooting to apply changes to SELinux"
+- name: download latest asterisk # currently version 15.2.0
   get_url:
     url: https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-15-current.tar.gz
     dest: /usr/local/src/
-    checksum: sha256:f1ef579fa635a54c6c149b47f23f3f022e5e1ad0ef762122b2b2f2410c4fa759
 - name: Extract asterisk installation
   unarchive:
     src: /usr/local/src/asterisk-15-current.tar.gz
     dest: /usr/local/src/
     remote_src: yes
 - name: Build asterisk from source
-  command: "{{ item }} chdir=/usr/local/src/asterisk-15.1.5/"
+  command: "{{ item }} chdir=/usr/local/src/asterisk-15.2.0/"
   with_items:
     - contrib/scripts/install_prereq install
     - ./configure
@@ -57,9 +64,9 @@
     dest: /etc/asterisk/
     owner: root
     group: root
-    mode: 0644
-  with_fileglob:
-    - path/to/roles/asterisk/configs/* # all files in this directory will be copied over
+  with_items:
+    - 'pjsip.conf'
+    - 'extensions.conf'
 - name: restart asterisk service
   service:
     name: asterisk

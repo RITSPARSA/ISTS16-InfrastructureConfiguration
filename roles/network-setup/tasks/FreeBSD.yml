@@ -34,5 +34,11 @@
   template:
     src: templates/hosts
     dest: /etc/hosts
-  notify:
-    - Restart networking
+
+- name: Restart network - WARN: This will break connection
+  service:
+      name: network
+      state: restarted
+  async: 2
+  poll: 0
+

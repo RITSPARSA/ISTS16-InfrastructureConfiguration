@@ -1,0 +1,15 @@
+samba_packages:
+  - samba
+  - samba-client
+  - samba-common
+  - samba-winbind
+  - samba-winbind-clients
+
+kerb_packages:
+  - krb5-user
+  - openldap-clients
+
+sssd_packages:
+  - sssd
+  - oddjob-mkhomedir
+  - authconfig

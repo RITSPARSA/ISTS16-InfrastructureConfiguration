@@ -1,8 +1,15 @@
 - hosts: all
   roles:
+    - network-setup
     - osquery-deploy
 
-- hosts: nix
+- hosts: Nix
   roles:
-      - packages # TODO: Update roles.
+    - packages # TODO: Update roles.
+
+- hosts: Linux:children
+  vars:
+    wrapped: "{{ lookup('file', 'group_vars/adauth.yml') | from_yaml }}"
+  roles:
+    - ad-deploy
 

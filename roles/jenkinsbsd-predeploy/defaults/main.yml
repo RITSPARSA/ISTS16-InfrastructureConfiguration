@@ -1,0 +1,37 @@
+---
+# Author: Micah Martin
+
+# Port that Jenkins will listen on
+# Not 80 because of non-root permissions
+jenkins_port: 8080
+
+# The user and group that Jenkins is installed under
+# For BSD (and most others) it is Jenkins
+jenkins_user: jenkins
+
+# The directory Jenkins installs to
+# For BSD it is here
+jenkins_dir: /usr/local/jenkins
+
+# Plugins to install along with Jenkins
+jenkins_plugins:
+  - Github
+
+#
+# Variables for the project that the scoring engine will run
+#
+
+# The name of the Project
+jenkins_build_name: "ScoringEngineCheck"
+
+# The PUBLIC git repository to pull from
+jenkins_build_url: "https://github.com/RITSPARSA/ISTS16-Vega"
+
+# The repository branch to pull from
+jenkins_build_branch: "master"
+
+# The commands to run during the build
+jenkins_build_command: |
+  make
+  ./prog hello
+

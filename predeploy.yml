@@ -1,3 +1,7 @@
-- hosts: linux
+- hosts: Linux
   roles:
-      - packages
+    - packages
+
+- hosts: FreeBSD
+  roles:
+    - jenkinsbsd-predeploy

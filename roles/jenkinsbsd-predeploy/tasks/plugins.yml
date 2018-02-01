@@ -1,0 +1,11 @@
+---
+# Install the plugins using the Jenkins interface
+- name: Install plugins
+  uri:
+    url: "http://{{ inventory_hostname }}:{{ jenkins_port }}/pluginManager/installNecessaryPlugins"
+    method: POST
+    headers:
+      Content-Type: "text/xml"
+    body: "<jenkins><install plugin=\"{{ item }}@latest\" /></jenkins>"
+    status_code: 200,302
+  with_items: "{{ jenkins_plugins }}"

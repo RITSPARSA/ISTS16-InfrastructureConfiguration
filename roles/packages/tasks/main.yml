@@ -17,3 +17,11 @@
     name: "{{ item }}"
     state: installed
   with_items: "{{ packages }}"
+
+- name: Install headers Debian
+  shell: "apt-get -y install linux-headers-$(uname -r)"
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Install headers Centos7
+  shell: "yum install -y kernel-devel-$(uname -r)"
+  when: (ansible_distribution == 'CentOS')

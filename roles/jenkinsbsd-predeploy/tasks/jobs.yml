@@ -1,0 +1,13 @@
+---
+# Install a build job to be run by the scoring engine
+- name: Create build Job
+  file:
+    path: "{{ jenkins_dir }}/jobs/{{ jenkins_build_name }}"
+    state: directory
+
+- name: Install build job
+  template:
+    src: ../templates/buildjob.j2
+    dest: "{{ jenkins_dir }}/jobs/{{ jenkins_build_name }}/config.xml"
+
+

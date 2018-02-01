@@ -1,0 +1,906 @@
+---
+default_password: "Changeme-2018"
+
+whiteteam_nameservers:
+  - "8.8.8.8"
+
+machines:
+
+  vega.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.10"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  sirius.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.20"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  tauri.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.30"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  sol.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.40"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  crucis.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.50"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  persei.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.60"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  luna.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.75"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  andromeda.team0.ists:
+    team_id: "0"
+    ip: "10.2.0.100"
+    network: "10.2.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.0.254"
+    broadcast: "10.2.0.254"
+  pegasi.team0.ists:
+    team_id: "0"
+    ip: "10.3.0.10"
+    network: "10.3.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.0.254"
+    broadcast: "10.3.0.254"
+  wolf.team0.ists:
+    team_id: "0"
+    ip: "10.3.0.20"
+    network: "10.3.0.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.0.254"
+    broadcast: "10.3.0.254"
+   
+
+
+
+  vega.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.10"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  sirius.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.20"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  tauri.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.30"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  sol.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.40"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  crucis.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.50"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  persei.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.60"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  luna.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.75"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  andromeda.team1.ists:
+    team_id: "1"
+    ip: "10.2.1.100"
+    network: "10.2.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.1.254"
+    broadcast: "10.2.1.254"
+  pegasi.team1.ists:
+    team_id: "1"
+    ip: "10.3.1.10"
+    network: "10.3.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.1.254"
+    broadcast: "10.3.1.254"
+  wolf.team1.ists:
+    team_id: "1"
+    ip: "10.3.1.20"
+    network: "10.3.1.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.1.254"
+    broadcast: "10.3.1.254"
+   
+
+
+
+  vega.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.10"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  sirius.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.20"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  tauri.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.30"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  sol.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.40"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  crucis.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.50"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  persei.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.60"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  luna.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.75"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  andromeda.team2.ists:
+    team_id: "2"
+    ip: "10.2.2.100"
+    network: "10.2.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.2.254"
+    broadcast: "10.2.2.254"
+  pegasi.team2.ists:
+    team_id: "2"
+    ip: "10.3.2.10"
+    network: "10.3.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.2.254"
+    broadcast: "10.3.2.254"
+  wolf.team2.ists:
+    team_id: "2"
+    ip: "10.3.2.20"
+    network: "10.3.2.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.2.254"
+    broadcast: "10.3.2.254"
+   
+
+
+
+  vega.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.10"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  sirius.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.20"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  tauri.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.30"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  sol.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.40"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  crucis.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.50"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  persei.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.60"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  luna.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.75"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  andromeda.team3.ists:
+    team_id: "3"
+    ip: "10.2.3.100"
+    network: "10.2.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.3.254"
+    broadcast: "10.2.3.254"
+  pegasi.team3.ists:
+    team_id: "3"
+    ip: "10.3.3.10"
+    network: "10.3.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.3.254"
+    broadcast: "10.3.3.254"
+  wolf.team3.ists:
+    team_id: "3"
+    ip: "10.3.3.20"
+    network: "10.3.3.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.3.254"
+    broadcast: "10.3.3.254"
+   
+
+
+
+  vega.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.10"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  sirius.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.20"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  tauri.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.30"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  sol.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.40"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  crucis.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.50"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  persei.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.60"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  luna.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.75"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  andromeda.team4.ists:
+    team_id: "4"
+    ip: "10.2.4.100"
+    network: "10.2.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.4.254"
+    broadcast: "10.2.4.254"
+  pegasi.team4.ists:
+    team_id: "4"
+    ip: "10.3.4.10"
+    network: "10.3.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.4.254"
+    broadcast: "10.3.4.254"
+  wolf.team4.ists:
+    team_id: "4"
+    ip: "10.3.4.20"
+    network: "10.3.4.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.4.254"
+    broadcast: "10.3.4.254"
+   
+
+
+
+  vega.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.10"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  sirius.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.20"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  tauri.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.30"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  sol.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.40"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  crucis.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.50"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  persei.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.60"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  luna.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.75"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  andromeda.team5.ists:
+    team_id: "5"
+    ip: "10.2.5.100"
+    network: "10.2.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.5.254"
+    broadcast: "10.2.5.254"
+  pegasi.team5.ists:
+    team_id: "5"
+    ip: "10.3.5.10"
+    network: "10.3.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.5.254"
+    broadcast: "10.3.5.254"
+  wolf.team5.ists:
+    team_id: "5"
+    ip: "10.3.5.20"
+    network: "10.3.5.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.5.254"
+    broadcast: "10.3.5.254"
+   
+
+
+
+  vega.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.10"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  sirius.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.20"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  tauri.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.30"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  sol.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.40"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  crucis.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.50"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  persei.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.60"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  luna.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.75"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  andromeda.team6.ists:
+    team_id: "6"
+    ip: "10.2.6.100"
+    network: "10.2.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.6.254"
+    broadcast: "10.2.6.254"
+  pegasi.team6.ists:
+    team_id: "6"
+    ip: "10.3.6.10"
+    network: "10.3.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.6.254"
+    broadcast: "10.3.6.254"
+  wolf.team6.ists:
+    team_id: "6"
+    ip: "10.3.6.20"
+    network: "10.3.6.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.6.254"
+    broadcast: "10.3.6.254"
+   
+
+
+
+  vega.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.10"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  sirius.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.20"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  tauri.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.30"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  sol.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.40"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  crucis.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.50"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  persei.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.60"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  luna.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.75"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  andromeda.team7.ists:
+    team_id: "7"
+    ip: "10.2.7.100"
+    network: "10.2.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.7.254"
+    broadcast: "10.2.7.254"
+  pegasi.team7.ists:
+    team_id: "7"
+    ip: "10.3.7.10"
+    network: "10.3.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.7.254"
+    broadcast: "10.3.7.254"
+  wolf.team7.ists:
+    team_id: "7"
+    ip: "10.3.7.20"
+    network: "10.3.7.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.7.254"
+    broadcast: "10.3.7.254"
+   
+
+
+
+  vega.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.10"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  sirius.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.20"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  tauri.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.30"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  sol.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.40"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  crucis.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.50"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  persei.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.60"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  luna.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.75"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  andromeda.team8.ists:
+    team_id: "8"
+    ip: "10.2.8.100"
+    network: "10.2.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.8.254"
+    broadcast: "10.2.8.254"
+  pegasi.team8.ists:
+    team_id: "8"
+    ip: "10.3.8.10"
+    network: "10.3.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.8.254"
+    broadcast: "10.3.8.254"
+  wolf.team8.ists:
+    team_id: "8"
+    ip: "10.3.8.20"
+    network: "10.3.8.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.8.254"
+    broadcast: "10.3.8.254"
+   
+
+
+
+  vega.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.10"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  sirius.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.20"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  tauri.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.30"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  sol.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.40"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  crucis.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.50"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  persei.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.60"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  luna.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.75"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  andromeda.team9.ists:
+    team_id: "9"
+    ip: "10.2.9.100"
+    network: "10.2.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.9.254"
+    broadcast: "10.2.9.254"
+  pegasi.team9.ists:
+    team_id: "9"
+    ip: "10.3.9.10"
+    network: "10.3.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.9.254"
+    broadcast: "10.3.9.254"
+  wolf.team9.ists:
+    team_id: "9"
+    ip: "10.3.9.20"
+    network: "10.3.9.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.9.254"
+    broadcast: "10.3.9.254"
+   
+
+
+
+  vega.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.10"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  sirius.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.20"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  tauri.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.30"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  sol.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.40"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  crucis.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.50"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  persei.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.60"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  luna.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.75"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  andromeda.team10.ists:
+    team_id: "10"
+    ip: "10.2.10.100"
+    network: "10.2.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.10.254"
+    broadcast: "10.2.10.254"
+  pegasi.team10.ists:
+    team_id: "10"
+    ip: "10.3.10.10"
+    network: "10.3.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.10.254"
+    broadcast: "10.3.10.254"
+  wolf.team10.ists:
+    team_id: "10"
+    ip: "10.3.10.20"
+    network: "10.3.10.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.10.254"
+    broadcast: "10.3.10.254"
+   
+
+
+
+  vega.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.10"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  sirius.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.20"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  tauri.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.30"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  sol.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.40"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  crucis.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.50"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  persei.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.60"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  luna.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.75"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  andromeda.team11.ists:
+    team_id: "11"
+    ip: "10.2.11.100"
+    network: "10.2.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.2.11.254"
+    broadcast: "10.2.11.254"
+  pegasi.team11.ists:
+    team_id: "11"
+    ip: "10.3.11.10"
+    network: "10.3.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.11.254"
+    broadcast: "10.3.11.254"
+  wolf.team11.ists:
+    team_id: "11"
+    ip: "10.3.11.20"
+    network: "10.3.11.0"
+    netmask: "255.255.255.0"
+    gateway: "10.3.11.254"
+    broadcast: "10.3.11.254"
+
+hostnames:
+  mail: tauri
+  web1: luna
+  web2: pegasi
+  elastic1: crucis
+  jenkins1: vega
+  jenkisn2: wolf
+  ad: sol
+  ftp: sirius
+  db: sirius
+  attack: persei
+  android: andromeda
+

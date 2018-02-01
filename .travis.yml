@@ -15,5 +15,3 @@ script:
   - ansible-playbook -i hosts deploy.yml --syntax-check
   - ansible-lint predeploy.yml
   - ansible-lint deploy.yml
-  - "ansible-playbook -i hosts predeploy.yml --connection=local --sudo"
-  - "ansible-playbook -i hosts deploy.yml --connection=local --sudo"

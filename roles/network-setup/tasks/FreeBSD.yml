@@ -1,0 +1,44 @@
+---
+- name: Fetch machines' IP
+  set_fact:
+    new_ip: machines[inventory_hostname]['ip']
+
+- name: Fetch machines' Netmask
+  set_fact:
+    new_nm: machines[inventory_hostname]['netmask']
+
+- name: Fetch machines' Gateway
+  set_fact:
+    new_gw: machines[inventory_hostname]['netmask']
+
+- name: Set a static IP
+  replace:
+    path: /etc/rc.conf
+    state: present
+    regex: "ifconfig_{{ansible_default_ipv4.interface}}="
+    line: "ifconfig_{{ansible_default_ipv4.interface}}=\"inet {{new_ip}} netmask {{new_nm}}\""
+
+- name: Set the Gateway
+  replace:
+    path: /etc/rc.conf
+    state: present
+    regex: "defaultrouter="
+    line: "defaultrouter=\"{{new_gw}}\""
+
+- name: Apply the resolv.conf template
+  template:
+    src: templates/resolv.conf
+    dest: /etc/resolv.conf
+
+- name: Apply the hosts template
+  template:
+    src: templates/hosts
+    dest: /etc/hosts
+
+- name: Restart network - WARN: This will break connection
+  service:
+      name: network
+      state: restarted
+  async: 2
+  poll: 0
+

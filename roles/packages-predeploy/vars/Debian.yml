@@ -1,0 +1,6 @@
+---
+packages:
+  - netcat
+  - vim
+  - python
+  - build-essential

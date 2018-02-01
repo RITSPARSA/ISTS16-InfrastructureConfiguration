@@ -1,0 +1,100 @@
+---
+# tasks file for zentral-deploy
+- name: set selinux permissive
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: Install with package manager
+  package:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - docker
+    - git
+    - python-pip
+
+- name: Obtain docker-compose
+  pip:
+    name: '{{ item }}'
+  with_items:
+    - docker-compose
+
+- name: enable and restart docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Obtain zentral
+  git:
+    repo: '{{ git_url }}'
+    dest: /opt/zentral
+    clone:  yes
+    update: no
+
+- name: Copy base.json
+  template:
+    src: templates/base.json
+    dest: /opt/zentral/conf/start/zentral/base.json
+
+- name: Copy Dockerfile for Prometheus
+  lineinfile:
+    path: /opt/zentral/conf/start/docker/prometheus/Dockerfile
+    regexp: '^FROM    prom/prometheus'
+    line: 'FROM    prom/prometheus:v1.8.2'
+
+- name: Docker-compose
+  template:
+    src: templates/Docker-compose.yml
+    dest: /opt/zentral/Docker-compose.yml
+
+- name: Setup Zentral
+  docker_service:
+    project_name: zentral
+    project_src: /opt/zentral
+  register: output
+
+- name: Setup account
+  shell: docker-compose run --rm web createuser {{ zentral_user }} zentral@{{ hostnames['mail'] }}.team{{ machines[inventory_hostname]['team_id'] }} --superuser
+  register: link_raw
+  args:
+    chdir: /opt/zentral
+
+- name: Set password reset link
+  set_fact:
+    reset_url: 'https:{{link_raw.stdout.split(":")[-1]}}'
+
+- name: Issue a GET request to the reset link
+  uri:
+    url: "{{reset_url}}"
+    validate_certs: no
+    return_content: yes
+  register: resp_raw
+
+- name: Reset user password
+  uri:
+    url : "{{reset_url}}"
+    method: POST
+    follow_redirects: all
+    headers:
+      Cookie: "{{resp_raw.set_cookie}}"
+      authority: "{{inventory_hostname}}"
+      referer: "{{reset_url}}"
+      user-agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+    body: 'csrfmiddlewaretoken={{resp_raw.cookies.csrftoken}}&new_password1={{zentral_pass}}&new_password2={{zentral_pass}}'
+    validate_certs: no
+    return_content: yes
+
+# - name: Register user
+#   uri: 'https{{ link_raw.stdout.split(':')[-1] }}'
+#   method: POST
+#   body:
+#   header:
+#   curl 'https://test.team0.ists/reset/MQ/4sx-4755f526b0c7ce4a2383/' -H 'origin: https://test.team0.ists' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: en-US,en;q=0.9' -H 'cookie: csrftoken=gKPhqyNQdTXZixo8NwKwdoREdlitVp1msIn2j4EfRvyo35SXQuMnk99dq3YipNDi' -H 'upgrade-insecure-requests: 1' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36' -H 'content-type: application/x-www-form-urlencoded' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' -H 'cache-control: max-age=0' -H 'authority: test.team0.ists' -H 'referer: https://test.team0.ists/reset/MQ/4sx-4755f526b0c7ce4a2383/' -H 'dnt: 1' --data 'csrfmiddlewaretoken=aeWuQNI8unwBqHsW7y4KeRnwL0vp2cOAmcufJjzx8Z70bfWLaw6BlCF5YIbewAqw&new_password1=hello&new_password2=hello' --compressed --insecure ;
+# curl 'https://test.team0.ists/reset/done/' -H 'cookie: csrftoken=gKPhqyNQdTXZixo8NwKwdoREdlitVp1msIn2j4EfRvyo35SXQuMnk99dq3YipNDi' -H 'dnt: 1' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: en-US,en;q=0.9' -H 'upgrade-insecure-requests: 1' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' -H 'cache-control: max-age=0' -H 'authority: test.team0.ists' -H 'referer: https://test.team0.ists/reset/MQ/4sx-4755f526b0c7ce4a2383/' --compressed --insecure ;
+# curl 'https://test.team0.ists/static_debug/logox2.png' --compressed ;
+# curl 'https://test.team0.ists/static_debug/jquery/jquery.min.js' -H 'Referer: https://test.team0.ists/reset/done/' --compressed ;
+# curl 'https://test.team0.ists/static_debug/bootstrap/js/bootstrap.min.js' -H 'Referer: https://test.team0.ists/reset/done/' --compressed ;
+# curl 'https://test.team0.ists/static_debug/Chart.js/Chart.min.js' -H 'Referer: https://test.team0.ists/reset/done/' --compressed
+...

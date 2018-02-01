@@ -1,0 +1,49 @@
+---
+# We check to make sure Jenkins is stopped
+- name: Stopping Jenkins
+  service:
+    name: jenkins
+    state: stopped
+
+# Make sure there is an admin folder or Jenkins gets mad
+- name: Configuring Jenkins
+  file:
+    path: "{{ jenkins_dir }}/users/admin"
+    state: directory
+
+# Add the config for our custom user
+- name: "Adding User: Scoring"
+  copy:
+    src: "../files/users/scoring"
+    dest: "{{ jenkins_dir }}/users"
+
+# Set the port to the given value
+- name: "Configuring port"
+  replace:
+    path: /usr/local/etc/rc.d/jenkins
+    regexp: '(--httpPort)=\d+'
+    replace: '\1={{ jenkins_port }}'
+
+# Remove '/jenkins/' from the ned of the url
+- name: "Configuring web url"
+  replace:
+    path: /usr/local/etc/rc.d/jenkins
+    regexp: '(--prefix=).*"'
+    replace: '\1"'
+
+# Skip the initial install
+- name: Bypassing Install
+  lineinfile:
+    path: "{{ jenkins_dir }}/jenkins.install.InstallUtil.lastExecVersion"
+    line: "2.89.2"
+    create: yes
+    state: present
+
+# Make sure the entire directory is owned by the correct user
+- name: "Setting permissions"
+  file:
+    path: "{{ jenkins_dir }}"
+    state: directory
+    owner: "{{ jenkins_user }}"
+    group: "{{ jenkins_user }}"
+    recurse: yes

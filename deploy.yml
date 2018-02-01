@@ -1,3 +1,27 @@
-- hosts: linux
+---
+- hosts: WindowsAD
   roles:
-      - packages # TODO: Update roles.
+    - dc-deploy
+
+- hosts: Nix
+  vars:
+    wrapped: "{{ lookup('file', 'group_vars/adauth.yml') | from_yaml }}"
+  roles:
+      - ad-deploy
+
+- hosts: all
+  roles:
+    - osquery-deploy
+
+- hosts: Windows
+  roles:
+    - smb-deploy
+
+- hosts: RaspberryPi
+  roles:
+    - command-center-deploy
+
+- hosts: WindowsMail
+  roles:
+    - mail-deploy
+

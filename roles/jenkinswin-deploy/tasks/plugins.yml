@@ -1,0 +1,5 @@
+---
+
+- win_copy:
+    src: files/plugins
+    dest: C:\Program Files (x86)\Jenkins

@@ -1,0 +1,12 @@
+[all:vars]
+; Variables needed to connect to winrm
+; http://docs.ansible.com/ansible/latest/intro_windows.html#inventory 
+ansible_user=Administrator
+ansible_password=Changeme-2018
+ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_scheme=http
+ansible_winrm_server_cert_validation=ignore
+
+[mail]
+tauri.team1.ists

@@ -1,0 +1,3 @@
+- hosts: mail
+  roles:
+    - ../../mail-predeploy

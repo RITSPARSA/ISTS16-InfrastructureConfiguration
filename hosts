@@ -183,7 +183,18 @@ ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
 ansible_user=root
 
 [Windows:vars]
+ansible_connection=winrm
+ansible_winrm_scheme=http
 ansible_user=Administrator
+ansible_password=Changeme-2018
+ansible_port=5985
+ansible_winrm_server_cert_validation=ignore
+
+[Windows:children]
+WindowsAD
+WindowsFTP
+WindowsJenkins
+WindowsMail
 
 [FreeBSD:vars]
 ansible_connection=paramiko

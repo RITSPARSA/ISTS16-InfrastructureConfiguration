@@ -1,0 +1,15 @@
+---
+# vars file for accounts-predeploy
+accounts:
+  - berk
+  - spay
+  - nate
+  - rodger
+
+admin_accounts:
+  - csanders
+  - bobzinga
+  - tsherman
+  - jeff
+  - snoozan
+  - zate

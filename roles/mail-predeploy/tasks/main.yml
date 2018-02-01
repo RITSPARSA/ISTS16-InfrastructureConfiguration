@@ -1,0 +1,12 @@
+---
+# Author: Micah Martin
+# Copy the installer over to the box and run it
+
+- name: Copy Installer
+  win_copy:
+    src: ../files/installer.exe
+    dest: C:\hMailInstaller.exe
+
+- name: Installing hMail
+  win_command: C:\hMailInstaller.exe /verysilent
+

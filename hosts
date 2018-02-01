@@ -1,3 +1,8 @@
+
+#
+#   Team LAN
+#
+
 [FreeBSD]
 vega.team0.ists
 vega.team1.ists
@@ -110,6 +115,10 @@ andromeda.team9.ists
 andromeda.team10.ists
 andromeda.team11.ists
 
+#
+#   Cloud
+#
+
 [Ubuntu]
 pegasi.team0.ists
 pegasi.team1.ists
@@ -138,6 +147,10 @@ wolf.team9.ists
 wolf.team10.ists
 wolf.team11.ists
 
+#
+#   Parent Groups
+#
+
 [Linux:children]
 CentOS
 ParrotOS
@@ -151,11 +164,20 @@ FreeBSD
 Linux
 Unix
 
+[Windows:children]
+WindowsAD
+WindowsFTP
+WindowsJenkins
+WindowsMail
+
+#
+#   Variables
+#
+
 [all:vars]
 ansible_ssh_pass=Changeme-2018
 ansible_become_pass=Changeme-2018
 ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
-
 
 [Nix:vars]
 ansible_user=root
@@ -177,3 +199,5 @@ WindowsMail
 [FreeBSD:vars]
 ansible_connection=paramiko
 ansible_python_intepreter=/usr/local/bin/python
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+

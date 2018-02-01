@@ -3,6 +3,19 @@ Network Setup
 
 This role is responsible for using the fact {{ inventory_hostname }} and the dictionary 'machines' defined in /group_vars/all.yml to assign static ip addresses to machines, and to configure their DNS settings.
 
+How it works
+------------
+
+This role depends on a few things for it to successfully deploy a competition environment.
+
+The Virtual Machines must be set up to use DHCP, and must be configured to send their hostname along with the DHCP request (Not default in CentOS).
+They should point at a DHCP server, which can register them into DNS. The DHCP scope is determined by the network that the virtual machine is in.
+The next step is to make the ansible server resolve DNS from the DHCP/DNS server that has the records.
+We now use FQDNs in the inventory hosts file, which will be resolvable. We also precompute a dictionary "machines" of what we'd like the end ip addresses / settings etc. to be. A script to do that has been provided 'generate_machines.sh'.
+Now using the inventory_hostname ansible fact, and the machines dictionary, we are able to adequately deploy team specific applications to machines.
+Please note that the last command will restart networking. Ansible has been configured to "Fire and Forget" this command.
+After a successful run of this role, all servers affected will have their IP changed. This means you'll either need to point at a DNS server with proper records, or configure your /etc/hosts file to resolve them for you.
+
 Requirements
 ------------
 

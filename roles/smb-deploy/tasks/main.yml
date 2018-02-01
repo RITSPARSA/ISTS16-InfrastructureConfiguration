@@ -1,12 +1,15 @@
 - name: Create the directory
   win_file:
-    path: C:\shares\space_rocks
+    path: "{{ item.share_directory }}"
     state: directory
+  with_items: "{{ shares }}"
 
 - name: Make share
-  win_command: net share space_rocks=c:\shares\space_rocks /GRANT:Everyone,FULL
+  win_command: "net share {{ item.share_name }}={{ item.share_directory }} /GRANT:Everyone,FULL"
+  with_items: "{{ shares }}"
 
 - name: copy files to created share
   win_copy: 
     src: files/
-    dest: c:\shares\space_rocks
+    dest: "{{ item.share_directory }}"
+  with_items: "{{ shares }}"

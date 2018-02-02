@@ -1,0 +1,7 @@
+#- set_fact:
+#    dns_server: "{{ hostnames['ad'] }}.team{{ machines[inventory_hostname]['team_id'] }}.ists"
+
+domainname: "team{{ machines[inventory_hostname]['team_id'] }}.ists"
+#domaincontrollerip: "{{machines[dns_server]['ip']}}"
+username: "sol.{{ machines[inventory_hostname]['team_id'] }}.ists\\Administrator"
+password: "Changeme-2018"

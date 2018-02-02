@@ -1,0 +1,6 @@
+---
+#run with main host file
+- hosts: WindowsFTP, WindowsFTP, WindowsJenkins
+
+  roles:
+      - ../../ad-win-deploy

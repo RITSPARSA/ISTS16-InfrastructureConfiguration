@@ -1,6 +1,0 @@
----
-
-- name: Install AD and Promote to Domain Controller
-  script: files/Install-AD.ps1 "{{ domain }}" "{{ netbiosname }}" "{{ adbackuppass }}"
-  tags:
-    - dcpromo 

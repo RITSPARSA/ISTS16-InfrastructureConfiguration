@@ -1,0 +1,3 @@
+domain: "team{{ machines[inventory_hostname]['team_id'] }}.ists"
+netbiosname: "team{{machines[inventory_hostname]['team_id'] }}"
+adbackuppass: "Changeme-2018"    

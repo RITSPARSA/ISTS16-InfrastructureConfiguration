@@ -6,7 +6,7 @@
     dest: C:\DNSRecords.csv
 
 - name: Add DNS records and enable zone transfers/updates
-  script: files/Add-DnsRecords.ps1 C:\DNSRecords.csv {{ team_number }} -CreatePtrs
+  script: files/Add-DnsRecords.ps1 C:\DNSRecords.csv {{ team_number }} {{dns_server}} -CreatePtrs
 
 - name: Delete DNS record CSV
   win_file:

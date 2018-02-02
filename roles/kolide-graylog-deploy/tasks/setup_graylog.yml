@@ -1,0 +1,28 @@
+####################################################################
+# Setup Graylog Listeners
+####################################################################
+- name: Create beats listener
+  uri:
+    url: https://graylog.hackinglab.beer
+    method: GET
+    return_content: yes
+    validate_certs: no
+    follow_redirects: yes
+  register: graylog_login_get
+
+- debug:
+    msg: '{{ graylog_login_get }}'
+
+- name: Create beats listener
+  uri:
+    url: https://graylog.hackinglab.beer/api/system/sessions
+    method: POST
+    body: '"username":"admin","password":"{{ graylog_admin_password }}","host":"graylog.hackinglab.beer'
+    body_format: json
+    return_content: yes
+    validate_certs: no
+    follow_redirects: yes
+  register: graylog_login_post
+
+- debug:
+    msg: '{{ graylog_login_post }}'

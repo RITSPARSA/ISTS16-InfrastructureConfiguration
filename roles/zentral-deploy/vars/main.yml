@@ -1,5 +1,0 @@
----
-# vars file for zentral-deploy
-git_url: https://github.com/zentralopensource/zentral.git
-zentral_user: admin
-zentral_pass: Changeme-2018

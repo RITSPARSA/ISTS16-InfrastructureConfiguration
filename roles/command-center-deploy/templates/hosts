@@ -14,14 +14,14 @@
 {% set attack = hostnames['attack']+'.'+domain %}
 {% set android = hostnames['android']+'.'+domain %}
 
-{{ machines[mail]['ip'] }} {{ mail }}
-{{ machines[web1]['ip'] }} {{ web1 }}
-{{ machines[web2]['ip'] }} {{ web2 }}
-{{ machines[elastic1]['ip'] }} {{ elastic1 }}
-{{ machines[jenkins1]['ip'] }} {{ jenkins1 }}
-{{ machines[jenkins2]['ip'] }} {{ jenkins2 }}
-{{ machines[ad]['ip'] }} {{ ad }}
-{{ machines[ftp]['ip'] }} {{ ftp }}
-{{ machines[db]['ip'] }} {{ db }}
-{{ machines[attack]['ip'] }} {{ attack }}
-{{ machines[android]['ip'] }} {{ android }}
+{{ machines[mail]['ip'] }} {{ hostnames['mail'] }} {{ mail }}
+{{ machines[web1]['ip'] }} {{ hostnames['web1'] }} {{ web1 }}
+{{ machines[web2]['ip'] }} {{ hostnames['web2'] }} {{ web2 }}
+{{ machines[elastic1]['ip'] }} {{ hostnames['elastic1'] }} {{ elastic1 }}
+{{ machines[jenkins1]['ip'] }} {{ hostnames['jenkins1'] }} {{ jenkins1 }}
+{{ machines[jenkins2]['ip'] }} {{ hostnames['jenkins2'] }} {{ jenkins2 }}
+{{ machines[ad]['ip'] }} {{ hostnames['ad'] }} {{ ad }}
+{{ machines[ftp]['ip'] }} {{ hostnames['ftp'] }} {{ ftp }}
+{{ machines[db]['ip'] }} {{ hostnames['db'] }} {{ db }}
+{{ machines[attack]['ip'] }} {{ hostnames['attack'] }} {{ attack }}
+{{ machines[android]['ip'] }} {{ hostnames['android'] }} {{ android }}

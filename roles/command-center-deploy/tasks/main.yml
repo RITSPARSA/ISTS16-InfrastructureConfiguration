@@ -1,7 +1,7 @@
 ---
 # tasks file for command-center-deploy
  - name: upload deploy key
-   copy: 
+   copy:
      src: ./files/deploy
      dest: /root/.ssh/deploy
      mode: 0600
@@ -10,22 +10,49 @@
 
  - name: download repository from git
    git:
-     repo: https://github.com/RITSPARSA/ISTS16-InfrastructureConfiguration
+     repo: https://github.com/RITSPARSA/ISTS16-CommandCenter
      path: /var/www/
      key_file: /root/.ssh/deploy
 
  - name: install pip
-   package: 
+   package:
      name: python-pip
      state: installed
 
  - name: install requirements
-   pip: 
+   pip:
      name: "{{ item }}"
    with_items:
      - requests
      - flask
 
-# - name: upload service file
-   
- 
+ - name: drop wsgi file into app directory
+   template: src=command.wsgi dest=/var/www/ISTS16-CommandCenter
+             owner=www-data group=www-data
+
+# install apache and configure
+
+ - name: Install Apache
+   package:
+     name: "{{ item }}"
+   with_items:
+     - apache2
+     - libapache2-mod-wsgi
+
+ - name: Enable wsgi module
+   apache2_module:
+      state: present
+      name: wsgi
+   notify:
+      - restart apache2
+
+ - name: Add VirtualHost to sites-enabled
+   template: src=virtualhost.conf dest=/etc/apache2/sites-available/ISTS16-CommandCenter.conf
+             owner=www-data group=www-data
+
+ - name: a2ensite ISTS16-CommandCenter
+   command: a2ensite ISTS16-CommandCenter
+   args:
+     creates: /etc/apache2/sites-enabled/ISTS16-CommandCenter.conf
+   notify:
+     - restart apache2

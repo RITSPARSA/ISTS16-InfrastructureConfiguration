@@ -1,2 +1,5 @@
 ---
 # handlers file for command-center-deploy
+#
+- name: restart apache2
+  service: name=apache2 state=restarted

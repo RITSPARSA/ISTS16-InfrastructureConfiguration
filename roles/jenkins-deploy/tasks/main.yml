@@ -1,0 +1,24 @@
+---
+#vars:
+
+- name: Create Directory
+  file:
+    path: "{{ nix_file_location }}"
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0700
+    recurse: yes
+  when: ansible_os_family == 'FreeBSD'
+
+- name: Drop Team Number 
+  copy: 
+    content: "==== {{ machines[inventory_hostname]['team_id']|hash('sha1') }} \n"
+    dest: "{{ bsd_dir }}{{ bsd_file }}"
+  when: ansible_os_family == 'FreeBSD'
+
+- name: Drop Team Number
+  win_copy:
+    content: "==== {{ machines[inventory_hostname]['team_id']|hash('sha1') }} \n"
+    dest: "{{ win_file }}"
+  when: ansible_os_family == 'Windows'

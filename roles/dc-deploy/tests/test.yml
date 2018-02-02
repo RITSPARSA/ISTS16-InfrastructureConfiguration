@@ -1,0 +1,5 @@
+- hosts: WindowsAD
+
+  roles:
+
+      - ../../deploy-dc

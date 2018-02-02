@@ -3,4 +3,5 @@ packages:
   - netcat
   - vim
   - python
+  - python-pip
   - build-essential

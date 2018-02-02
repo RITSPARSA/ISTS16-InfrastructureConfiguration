@@ -3,7 +3,6 @@
 - name: install requirements
   block:
     - apt: 
-        upgrade: yes
         name: "{{ item }}"
         state: latest
       with_items: "{{ packages }}"

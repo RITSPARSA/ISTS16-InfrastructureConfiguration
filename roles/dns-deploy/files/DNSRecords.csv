@@ -1,0 +1,13 @@
+Type,Address,Name
+A,10.2.X.10,vega.teamX.ists
+A,10.2.X.20,sirius.teamX.ists
+A,10.2.X.30,tauri.teamX.ists
+A,10.2.X.40,sol.teamX.ists
+A,10.2.X.50,crucis.teamX.ists
+A,10.2.X.60,persei.teamX.ists
+A,10.2.X.75,luna.teamX.ists
+A,10.2.X.100,andromeda.teamX.ists
+A,10.3.X.10,pegasi.teamX.ists
+A,10.3.X.20,wolf.teamX.ists
+CNAME,ns1,sol.teamX.ists
+MX,10.2.X.30,tauri.teamX.ists

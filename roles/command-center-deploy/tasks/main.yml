@@ -8,6 +8,11 @@
      owner: root
      group: root
 
+ - name: Upload /etc/hosts
+   template:
+    src: templates/hosts
+    dest: /etc/hosts
+
  - name: download repository from git
    git:
      repo: https://github.com/RITSPARSA/ISTS16-CommandCenter

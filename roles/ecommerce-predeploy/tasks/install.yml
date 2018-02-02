@@ -1,13 +1,10 @@
 ---
 # install requirements and git repo
 - name: install requirements
-  block:
-    - apt: 
-        name: "{{ item }}"
-        state: latest
-      with_items: "{{ packages }}"
-  become: true
-  become_user: root
+  apt: 
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ packages }}"
 
 - name: install ssh-key
   copy:
@@ -15,19 +12,14 @@
     dest: "/root/.ssh/id_rsa"
     mode: 0600
     owner: root
-  become: true
-  become_user: root
 
 - name: clone git repo
   git:
     repo: "{{ git_repo }}"
     dest: "{{ app_dir }}"
     accept_hostkey: yes
-  become: true 
-  become_user: root
 
 - name: install required python packages
   pip:
     requirements: "{{ app_dir }}/requirements.txt"
-  become: true 
-  become_user: root
+

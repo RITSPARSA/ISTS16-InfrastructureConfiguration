@@ -2,4 +2,4 @@
 
   roles:
 
-      - ../../deploy-dc
+      - ../../dc-deploy

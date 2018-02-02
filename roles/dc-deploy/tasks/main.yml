@@ -1,17 +1,6 @@
-- name: Install AD-Domain-Services feature
-    win_feature:
-      name: 'AD-Domain-Services'
-      include_management_tools: True
-      include_sub_features: True
-      state: present
+---
 
-- name: Promote to domain controller
-    win_domain:
-      dns_domain_name: '{{ ad_domain_name }}'
-      safe_mode_password: '{{ ad_safe_mode_password }}'
-    register: active_directory_controllers
-
-- name: reboot once DC created
-  win_reboot:
-  when: active_directory_controllers.reboot_required
-
+- name: Install AD and Promote to Domain Controller
+  script: files/Install-AD.ps1 "{{ domain }}" "{{ netbiosname }}" "{{ adbackuppass }}"
+  tags:
+    - dcpromo 

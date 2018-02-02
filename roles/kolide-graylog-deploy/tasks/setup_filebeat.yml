@@ -1,0 +1,36 @@
+####################################################################
+# Install/Setup Filebeat
+####################################################################
+- name: Add Elastic GPG key
+  rpm_key:
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add Elastic repo
+  yum_repository:
+    name: Elasticsearch
+    description: Elasticsearch repository for 6.x packages
+    baseurl: https://artifacts.elastic.co/packages/6.x/yum
+
+- name: Install/Setup Elasticsearch
+  yum:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - filebeat
+
+- name: Filebeat.yml
+  template:
+    src: templates/filebeat/filebeat.yml
+    dest: /etc/filebeat/filebeat.yml
+
+- name: OSQuery.yml for Filebeat
+  template:
+    src: templates/filebeat/osquery.yml
+    dest: /etc/filebeat/modules.d/osquery.yml
+
+- name: Start Filebeat service
+  service:
+    name: filebeat
+    state: restarted
+    enabled: yes

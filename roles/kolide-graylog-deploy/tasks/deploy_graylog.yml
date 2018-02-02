@@ -217,4 +217,5 @@
   service:
     name: firewalld
     state: stopped
-    enabled: yes
+    enabled: no
+

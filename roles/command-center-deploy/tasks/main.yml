@@ -1,5 +1,12 @@
 ---
 # tasks file for command-center-deploy
+#
+ - name: create ssh directory
+   file:
+     path: /root/.ssh/
+     state: directory
+     mode: 0550
+
  - name: upload deploy key
    copy:
      src: ./files/deploy
@@ -8,16 +15,17 @@
      owner: root
      group: root
 
- - name: Upload /etc/hosts
-   template:
-    src: templates/hosts
-    dest: /etc/hosts
+     # - name: Upload /etc/hosts
+     #   template:
+     #    src: templates/hosts
+     #    dest: /etc/hosts
 
  - name: download repository from git
    git:
-     repo: https://github.com/RITSPARSA/ISTS16-CommandCenter
-     path: /var/www/
+     repo: ssh://git@github.com/RITSPARSA/ISTS16-CommandCenter
+     dest: /var/www/
      key_file: /root/.ssh/deploy
+     force: True
 
  - name: install pip
    package:
@@ -32,14 +40,15 @@
      - flask
 
  - name: drop wsgi file into app directory
-   template: src=command.wsgi dest=/var/www/ISTS16-CommandCenter
+   template: src=command.wsgi dest=/var/www/command.wsgi
              owner=www-data group=www-data
 
 # install apache and configure
 
  - name: Install Apache
-   package:
+   apt:
      name: "{{ item }}"
+     update_cache: yes
    with_items:
      - apache2
      - libapache2-mod-wsgi
@@ -52,12 +61,7 @@
       - restart apache2
 
  - name: Add VirtualHost to sites-enabled
-   template: src=virtualhost.conf dest=/etc/apache2/sites-available/ISTS16-CommandCenter.conf
+   template: src=virtualhost.conf dest=/etc/apache2/sites-available/000-default.conf
              owner=www-data group=www-data
-
- - name: a2ensite ISTS16-CommandCenter
-   command: a2ensite ISTS16-CommandCenter
-   args:
-     creates: /etc/apache2/sites-enabled/ISTS16-CommandCenter.conf
    notify:
      - restart apache2

@@ -1,0 +1,26 @@
+---
+# vars file for kolide-graylog-deploy
+# Graylog 
+graylog_admin_password: Changeme-2018
+
+# Kolide 
+kolide_jwt_key: +fbQGDrAuuh+SQG2PmALrza/2BA25X4aLkl3cdnM2IE=
+
+# MySQL - Kolide
+mysql_root_user: root
+mysql_root_password: Changeme-2018
+mysql_kolide_dbname: kolide
+mysql_kolide_user: kolide
+mysql_kolide_hosts: 127.0.0.1
+mysql_kolide_pass: Changeme-2018
+
+# Cert generation
+cert_country: US
+cert_state: NY
+cert_local: Rochester
+cert_org: STARSA
+
+# Timezone
+timezone: America/New_York
+
+

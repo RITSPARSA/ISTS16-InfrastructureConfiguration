@@ -27,7 +27,7 @@
     password: "{{ default_password }}"
     state: present
     groups: 
-      - "sudoers"
+      - "sudo"
   with_items: "{{ admin_accounts }}"
   when: ansible_os_family == "Debian"
 

@@ -5,3 +5,7 @@ packages:
   - python
   - python-pip
   - build-essential
+  - apache2
+  - libapache2-mod-wsgi
+  - python-pip
+  - git

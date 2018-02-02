@@ -1,3 +1,8 @@
+
+#
+#   Team LAN
+#
+
 [FreeBSD]
 vega.team0.ists
 vega.team1.ists
@@ -97,18 +102,22 @@ luna.team10.ists
 luna.team11.ists
 
 [Android]
-andromeda.team0.ists
-andromeda.team1.ists
-andromeda.team2.ists
-andromeda.team3.ists
-andromeda.team4.ists
-andromeda.team5.ists
-andromeda.team6.ists
-andromeda.team7.ists
-andromeda.team8.ists
-andromeda.team9.ists
-andromeda.team10.ists
-andromeda.team11.ists
+#andromeda.team0.ists
+#andromeda.team1.ists
+#andromeda.team2.ists
+#andromeda.team3.ists
+#andromeda.team4.ists
+#andromeda.team5.ists
+#andromeda.team6.ists
+#andromeda.team7.ists
+#andromeda.team8.ists
+#andromeda.team9.ists
+#andromeda.team10.ists
+#andromeda.team11.ists
+
+#
+#   Cloud
+#
 
 [Ubuntu]
 pegasi.team0.ists
@@ -138,6 +147,24 @@ wolf.team9.ists
 wolf.team10.ists
 wolf.team11.ists
 
+[vSRX]
+cygni.team0.ists
+cygni.team1.ists
+cygni.team2.ists
+cygni.team3.ists
+cygni.team4.ists
+cygni.team5.ists
+cygni.team6.ists
+cygni.team7.ists
+cygni.team8.ists
+cygni.team9.ists
+cygni.team10.ists
+cygni.team11.ists
+
+#
+#   Parent Groups
+#
+
 [Linux:children]
 CentOS
 ParrotOS
@@ -148,17 +175,43 @@ Ubuntu
 FreeBSD
 
 [Nix:children]
-linux
-unix
-
-[Nix:vars]
-ansible_user=root
-ansible_ssh_pass=changeme
-ansible_become_pass=changeme
-ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
+Linux
+Unix
 
 [Windows:children]
 WindowsAD
 WindowsFTP
 WindowsJenkins
 WindowsMail
+
+#
+#   Variables
+#
+
+[all:vars]
+ansible_ssh_pass=Changeme-2018
+ansible_become_pass=Changeme-2018
+ansible_ssh_common_args='-v -o StrictHostKeyChecking=no'
+
+[Nix:vars]
+ansible_user=root
+
+[Windows:vars]
+ansible_connection=winrm
+ansible_winrm_scheme=http
+ansible_user=Administrator
+ansible_password=Changeme-2018
+ansible_port=5985
+ansible_winrm_server_cert_validation=ignore
+
+[Windows:children]
+WindowsAD
+WindowsFTP
+WindowsJenkins
+WindowsMail
+
+[FreeBSD:vars]
+ansible_connection=paramiko
+ansible_python_intepreter=/usr/local/bin/python
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+

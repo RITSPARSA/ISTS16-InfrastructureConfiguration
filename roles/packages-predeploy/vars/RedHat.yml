@@ -1,0 +1,9 @@
+---
+packages:
+  - nc
+  - vim
+  - net-tools
+  - gcc
+  - gcc-c++
+  - make
+  - openssl-devel

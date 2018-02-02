@@ -1,3 +1,0 @@
-- hosts: test_nix
-  roles:
-    - zentral-deploy

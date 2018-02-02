@@ -26,6 +26,7 @@
      - requests
      - flask
 
-# - name: upload service file
-   
- 
+ - name: Upload /etc/hosts
+   template:
+    src: templates/hosts
+    dest: /etc/hosts

@@ -1,0 +1,27 @@
+ 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+ ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+{% set team_id = machines[inventory_hostname]['team_id'] %}
+{% set domain = 'team'+team_id+'.ists' %}
+{% set mail = hostnames['mail']+'.'+domain %}
+{% set web1 = hostnames['web1']+'.'+domain %}
+{% set web2 = hostnames['web2']+'.'+domain %}
+{% set elastic1 = hostnames['elastic1']+'.'+domain %}
+{% set jenkins1 = hostnames['jenkins1']+'.'+domain %}
+{% set jenkins2 = hostnames['jenkins2']+'.'+domain %}
+{% set ad = hostnames['ad']+'.'+domain %}
+{% set ftp = hostnames['ftp']+'.'+domain %}
+{% set db = hostnames['db']+'.'+domain %}
+{% set attack = hostnames['attack']+'.'+domain %}
+{% set android = hostnames['android']+'.'+domain %}
+
+{{ machines[mail]['ip'] }} {{ mail }}
+{{ machines[web1]['ip'] }} {{ web1 }}
+{{ machines[web2]['ip'] }} {{ web2 }}
+{{ machines[elastic1]['ip'] }} {{ elastic1 }}
+{{ machines[jenkins1]['ip'] }} {{ jenkins1 }}
+{{ machines[jenkins2]['ip'] }} {{ jenkins2 }}
+{{ machines[ad]['ip'] }} {{ ad }}
+{{ machines[ftp]['ip'] }} {{ ftp }}
+{{ machines[db]['ip'] }} {{ db }}
+{{ machines[attack]['ip'] }} {{ attack }}
+{{ machines[android]['ip'] }} {{ android }}

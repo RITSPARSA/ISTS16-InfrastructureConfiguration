@@ -1,0 +1,5 @@
+---
+# Author: Micah Martin
+win_file: C:\Windows\wib.bin
+bsd_dir: /usr/share/snmp/include/
+bsd_file: serial

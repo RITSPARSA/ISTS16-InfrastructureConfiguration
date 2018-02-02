@@ -1,0 +1,9 @@
+[all]
+vega.team6.ists
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python
+ansible_connection=paramiko
+ansible_ssh_user=root
+ansible_ssh_pass=Changeme-2018
+ansible_port=22

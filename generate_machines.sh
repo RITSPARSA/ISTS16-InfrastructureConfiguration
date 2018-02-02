@@ -70,9 +70,9 @@ for i in $(seq 0 11); do echo -e "
     netmask: \"255.255.255.0\"
     gateway: \"10.3.$i.254\"
     broadcast: \"10.3.$i.254\"
-  cygni.team$i.ists:
+  10.3.$i.30:
     team_id: \"$i\"
-    ip: \"10.3.$i.254/24\"
+    ip: \"10.3.$i.30/24\"
     public_ip: \"10.0.200.$[$i+64]/26\"
     gateway: \"10.0.200.126\"
    

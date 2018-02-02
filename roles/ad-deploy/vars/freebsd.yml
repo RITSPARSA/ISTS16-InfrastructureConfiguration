@@ -1,0 +1,27 @@
+samba_packages:
+  - samba44
+
+kerb_packages:
+  - krb5
+
+sssd_packages:
+  - sssd
+  - cyrus-sasl-gssapi
+
+smb_conf_path:
+  - /usr/local/etc/smb4.conf
+
+krb_conf_path:
+  - /etc/krb5.conf    
+
+sssd_conf_path:
+  - /usr/local/etc/sssd/sssd.conf
+
+smb_conf:
+  - smb.conf.j2
+
+krb_conf:
+  - krb.conf
+
+sssd_conf:
+  - sssd.conf.j2

@@ -1,0 +1,44 @@
+#
+# $FreeBSD: releng/11.0/etc/pam.d/sshd 197769 2009-10-05 09:28:54Z des $
+#
+# PAM configuration for the "sshd" service
+#
+
+# auth
+#Opie disabled.  Enabling opie seems to break things when adding other
+#modules such as pam_sss.so.  It breaks in a way that lets anyone log in
+#if pam_sss.so is set to required, it breaks local logins w/ password
+#auth           sufficient      pam_opie.so             no_warn no_fake_prompts
+#auth           requisite       pam_opieaccess.so       no_warn allow_local
+#auth           sufficient      pam_krb5.so             no_warn try_first_pass
+#auth           sufficient      pam_ssh.so              no_warn try_first_pass
+auth            sufficient      pam_unix.so             no_warn try_first_pass nullok
+auth            sufficient      pam_sss.so              use_first_pass
+# these lines are required if you use PasswordAuthentification yes in sshd_conf
+# instead of ChallengeResponseAuthentication yes.  If you use
+# ChallengeResponseAuthentication yes then comment out these lines.  However
+# if PasswordAuthentification yes is used, changing password upon login (expired
+# password) won't work, since this causes sshd to call /bin/passwd, which
+# does not support KRB on FreeBSD.  ChallengeResponeAuthentification yes will
+# work, but will ask for your old password twice.  
+#auth           required        pam_deny.so
+
+# account
+account         required        pam_nologin.so
+#account        required        pam_krb5.so
+account         required        pam_login_access.so
+account         required        pam_unix.so
+account         sufficient      pam_sss.so
+
+# session
+#session        optional        pam_ssh.so              want_agent
+session         optional        pam_sss.so
+# install security/pam_mkhomedir and uncomment to automatically make home dirs
+#session         required        pam_mkhomedir.so        mode=0700
+session         required        pam_permit.so
+
+# password
+#password       sufficient      pam_krb5.so             no_warn try_first_pass
+#password       sufficient      pam_unix.so             try_first_pass use_authtok nullok
+password        sufficient      pam_unix.so             try_first_pass use_authtok
+password        sufficient      pam_sss.so              use_authtok

@@ -1,4 +1,9 @@
 ---
+#creates unattend file for dcpromo.exe if under version windows server 2012 
+- template: 
+    src: files/promote.txt
+    dest: C:\Users\Administrator\Documents\promote.txt
+
 
 - name: Install AD and Promote to Domain Controller
   script: files/Install-AD.ps1 "{{ domain }}" "{{ netbiosname }}" "{{ adbackuppass }}"

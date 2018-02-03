@@ -1,1 +1,2 @@
 team_number: "{{machines[inventory_hostname]['team_id']}}"
+dns_server: "sol.team{{machines[inventory_hostname]['team_id']}}.ists"

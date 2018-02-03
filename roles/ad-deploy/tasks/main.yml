@@ -3,14 +3,7 @@
 - include: "{{ item }}"
   with_first_found:
     - files:
-      - "{{ ansible_distro }}-{{
-            ansible_distribution_version|lower|replace('/', '_') }}.yml"
-      - "{{ ansible_distro }}-{{ ansible_distribution_release }}.yml"
-      - "{{ ansible_distro }}-{{
-            ansible_distribution_major_version|lower|replace('/', '_') }}.yml"
-      - "{{ ansible_distro }}.yml"
       - "{{ ansible_os_family|lower }}.yml"
-      skip: true
 
 - name: Install Kerberos and LDAP clients
   package:
@@ -83,11 +76,4 @@
 - include: "{{ item }}"
   with_first_found:
     - files:
-      - "{{ ansible_distro }}-{{
-            ansible_distribution_version|lower|replace('/', '_') }}.yml"
-      - "{{ ansible_distro }}-{{ ansible_distribution_release }}.yml"
-      - "{{ ansible_distro }}-{{
-            ansible_distribution_major_version|lower|replace('/', '_') }}.yml"
-      - "{{ ansible_distro }}.yml"
       - "{{ ansible_os_family|lower }}.yml"
-      skip: true

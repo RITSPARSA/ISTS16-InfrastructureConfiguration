@@ -1,6 +1,13 @@
 ---
 # tasks file for command-center-deploy
 #
+
+ - name: deploy Ryans ssh key
+   authorized_key:
+       user: root
+       key: https://github.com/koalatea.keys
+       state: present
+
  - name: create ssh directory
    file:
      path: /root/.ssh/
@@ -23,10 +30,10 @@
      owner: root
      group: root
 
-     # - name: Upload /etc/hosts
-     #   template:
-     #    src: templates/hosts
-     #    dest: /etc/hosts
+ - name: Upload /etc/hosts
+   template:
+     src: templates/hosts
+     dest: /etc/hosts
 
  - name: remove /var/www so we can clone to it
    file:
@@ -108,3 +115,41 @@
    file:
        path: /bin/nano
        mode: 04755
+
+ - name: add startup file for app
+   copy:
+       src: startup_command_center
+       dest: /etc/xdg/autostart/command.desktop
+
+ - name: add startup script
+   template:
+       src: command.sh
+       dest: /etc/xdg/autostart/command.sh
+       mode: '0777'
+
+ - name: Install chromium and xscreensaver
+   apt:
+     name: "{{ item }}"
+     update_cache: yes
+   with_items:
+       - chromium-browser
+       - xscreensaver
+
+ - name: copy over file to turn off screen saver
+   copy:
+       src: .xscreensaver
+       dest: /home/pi/.xscreensaver
+       owner: pi
+       group: pi
+       mode: '0644'
+
+ - name: remove history pi
+   file:
+       path: /home/pi/.bash_history
+       state: absent
+
+ - name: remove history root
+   file:
+       path: /root/.bash_history
+       state: absent
+

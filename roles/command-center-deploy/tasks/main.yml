@@ -58,6 +58,7 @@
      dest: /var/www/ISTS16-CommandCenter
      key_file: /root/.ssh/deploy
      force: yes
+   notify: restart apache2
    tags:
        - git
        - clone

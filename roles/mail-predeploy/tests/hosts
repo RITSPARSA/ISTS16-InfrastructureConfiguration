@@ -7,4 +7,4 @@ ansible_connection=winrm
 ansible_winrm_server_cert_validation=ignore
 
 [mail]
-10.80.100.2
+10.2.0.9

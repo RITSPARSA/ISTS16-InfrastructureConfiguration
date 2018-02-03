@@ -1,0 +1,23 @@
+---
+# Install sudo via 'pkg'
+- name: Installing sudo
+  pkgng:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - "sudo"
+
+- name: "Allow wheel in sudoers"
+  copy:
+    content: "%wheel ALL=(ALL) ALL"
+    dest: "/usr/local/etc/sudoers"
+
+# Add the users
+- name: Add the users
+  shell: pw useradd "{{ item }}" 
+  with_items: "{{ accounts }}"
+
+# Add admin the users
+- name: Add the admin users
+  shell: pw useradd "{{ item }}" -G wheel
+  with_items: "{{ admin_accounts }}"

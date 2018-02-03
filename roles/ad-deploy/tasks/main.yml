@@ -4,6 +4,9 @@
   with_first_found:
     - files:
       - "{{ ansible_os_family|lower }}.yml"
+      - paths:
+      - ../vars
+
 
 - name: Install Kerberos and LDAP clients
   package:
@@ -77,3 +80,5 @@
   with_first_found:
     - files:
       - "{{ ansible_os_family|lower }}.yml"
+      - paths:
+      - ../vars

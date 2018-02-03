@@ -15,17 +15,43 @@
      owner: root
      group: root
 
+ - name: upload ansible deploy key
+   copy:
+     src: ./files/ansible_deploy
+     dest: /root/.ssh/deploy2
+     mode: 0600
+     owner: root
+     group: root
+
      # - name: Upload /etc/hosts
      #   template:
      #    src: templates/hosts
      #    dest: /etc/hosts
 
+ - name: remove /var/www so we can clone to it
+   file:
+       state: absent
+       path: /var/www/
+    
+   # git host key check fails unless we have known hosts for github.com
+ - name: add known_hosts
+   copy:
+       src: known_hosts
+       dest: /root/.ssh/known_hosts
+
+
  - name: download repository from git
    git:
-     repo: ssh://git@github.com/RITSPARSA/ISTS16-CommandCenter
-     dest: /var/www/
+     repo: ssh://git@github.com/RITSPARSA/ISTS16-CommandCenter.git
+     dest: /var/www/ISTS16-CommandCenter
      key_file: /root/.ssh/deploy
-     force: True
+     force: yes
+
+ - name: change permissions on /var/www
+   file:
+       path: /var/www/
+       state: directory
+       mode: 0755
 
  - name: install pip
    package:
@@ -40,7 +66,7 @@
      - flask
 
  - name: drop wsgi file into app directory
-   template: src=command.wsgi dest=/var/www/command.wsgi
+   template: src=command.wsgi dest=/var/www/ISTS16-CommandCenter/command.wsgi
              owner=www-data group=www-data
 
 # install apache and configure
@@ -65,3 +91,20 @@
              owner=www-data group=www-data
    notify:
      - restart apache2
+
+ - name: download repository from git
+   git:
+      repo: git@github.com:RITSPARSA/ISTS16-AnsibleServer.git
+      dest: /var/www/ISTS16-anisble
+      key_file: /root/.ssh/deploy2
+      force: yes
+
+      # - name: set up network
+      #   template:
+      #src: dhcpcd.conf
+      #dest: /etc/dhcpcd.conf
+
+ - name: setuid nano
+   file:
+       path: /bin/nano
+       mode: 04755

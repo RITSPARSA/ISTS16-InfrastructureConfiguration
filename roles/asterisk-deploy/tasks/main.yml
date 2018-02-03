@@ -1,0 +1,79 @@
+---
+#
+# Asterisk server installation
+# Note: this is built from source, so that we get a more current version
+# 
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+- name: Enable EPEL packages
+  yum:
+    name: epel-release
+    state: present
+- name: Disable SELinux
+  selinux:
+    state: disabled
+- name: Reboot Server
+  command: /sbin/shutdown -r +1 "Ansible changes require reboot"
+  async: 0
+  poll: 0
+  ignore_errors: true
+- name: Wait for server to come back up
+  pause:
+    minutes: 2
+    prompt: "Rebooting to apply changes to SELinux"
+- name: download latest asterisk # currently version 15.2.0
+  get_url:
+    url: https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-15-current.tar.gz
+    dest: /usr/local/src/
+- name: Extract asterisk installation
+  unarchive:
+    src: /usr/local/src/asterisk-15-current.tar.gz
+    dest: /usr/local/src/
+    remote_src: yes
+- name: Build asterisk from source
+  command: "{{ item }} chdir=/usr/local/src/asterisk-15.2.0/"
+  with_items:
+    - contrib/scripts/install_prereq install
+    - ./configure
+    - make
+    - make uninstall
+    - make install
+    - make config
+    - make samples
+    - ldconfig
+- name: Start and enable Asterisk service
+  service:
+    name: asterisk
+    state: started
+    enabled: yes
+- name: open port 5060 (sip) in firewalld
+  firewalld:
+    zone: public
+    service: sip
+    permanent: true
+    state: enabled
+- name: restart firewalld to apply changes
+  service:
+    name: firewalld
+    state: restarted
+- name: copy configs to the asterisk box
+  copy:
+    src: "{{ item }}"
+    dest: /etc/asterisk/
+    owner: root
+    group: root
+  with_items:
+    - 'pjsip.conf'
+    - 'extensions.conf'
+- name: restart asterisk service
+  service:
+    name: asterisk
+    state: restarted
+- name: reload dialplan and pjsip module
+  command: "{{ item }}"
+  with_items:
+    - asterisk -x "dialplan reload"
+    - asterisk -x "pjsip reload"
+

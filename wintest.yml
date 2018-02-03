@@ -1,0 +1,41 @@
+---
+#- hosts: WindowsAD
+#  roles:
+#    - dc-deploy
+
+#- hosts: WindowsAD
+#  roles:
+#    - dns-deploy
+
+#- hosts: WindowsAD
+#  roles:
+    #! DOES NOT WORK "AD Web Services Missing" - add-win-users
+
+#- hosts: WindowsFTP
+#  roles:
+#    - ad-win-deploy
+
+#- hosts: WindowsJenkins
+#  roles:
+#    - ad-win-deploy
+
+#- hosts: WindowsMail
+#  roles:
+#    - ad-win-deploy
+
+#- hosts: Windows
+#  roles:   
+#    - smb-deploy
+ 
+#- hosts: WindowsMail
+#  roles:   
+#    - mail-deploy
+
+#- hosts: WindowsJenkins    
+#  roles:
+#    - jenkins-deploy
+
+- hosts: FreeBSD
+  roles:
+    - jenkins-deploy
+

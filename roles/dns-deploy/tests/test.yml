@@ -1,0 +1,6 @@
+- hosts: WindowsAD
+
+  roles:
+  
+    - ../../dns-deploy
+

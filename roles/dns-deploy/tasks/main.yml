@@ -1,0 +1,15 @@
+---
+
+- name: Copy DNS Record CSV
+  win_copy:
+    src: files/DNSRecords.csv
+    dest: C:\DNSRecords.csv
+
+- name: Add DNS records and enable zone transfers/updates
+  script: files/Add-DnsRecords.ps1 C:\DNSRecords.csv {{ team_number }} {{dns_server}} -CreatePtrs
+
+- name: Delete DNS record CSV
+  win_file:
+    path: C:\DNSRecords.csv
+    state: absent
+

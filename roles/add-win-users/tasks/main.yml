@@ -1,0 +1,128 @@
+- name: Enter User
+  win_domain_user:
+    name: Kamina
+    password: Changeme-2018
+    state: present
+    groups: 
+      -  Domain Admins
+    upn: kamina@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: Astro
+    password: Changeme-2018
+    state: present
+    groups: 
+      -  Domain Admins
+    upn: astro@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: Simone
+    password: Changeme-2018
+    state: present
+    upn: simone@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: Chaboi
+    password: Changeme-2018
+    state: present
+    groups: 
+      -  Domain Admins
+    upn: chaboi@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: space_ice_cream
+    password: Changeme-2018
+    state: present
+    groups: 
+    -  Domain Admins
+    upn: space_ice_cream@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: flat_earth
+    password: Changeme-2018
+    state: present
+    upn: flat_earth@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: gravity
+    password: Changeme-2018
+    state: present
+    upn: gravity@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: spacetronaut
+    password: Changeme-2018
+    state: present
+    upn: spacetronaut@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: changeme-2017
+    password: Changeme-2018
+    state: present
+    upn: changeme-2017@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: wendys
+    password: Changeme-2018
+    state: present
+    upn: wendys@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: laika
+    password: Changeme-2018
+    state: present
+    upn: laika@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: ham_monkeynaut
+    password: Changeme-2018
+    state: present
+    upn: ham_monkeynaut@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: able_monkeynaut
+    password: Changeme-2018
+    state: present
+    upn: able_monkeynaut@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: miss_baker
+    password: Changeme-2018
+    state: present
+    upn: miss_baker@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: astroturtle
+    password: Changeme-2018
+    state: present
+    upn: astroturtle@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: ducktales_moon_theme
+    password: Changeme-2018
+    state: present
+    upn: ducktales_moon_theme@team{{machines[inventory_hostname]['team_id']}}.ists
+
+- name: Enter User
+  win_domain_user:
+    name: ivan_number_one
+    password: Changeme-2018
+    state: present
+    upn: ivan_number_one@team{{machines[inventory_hostname]['team_id']}}.ists
+
+

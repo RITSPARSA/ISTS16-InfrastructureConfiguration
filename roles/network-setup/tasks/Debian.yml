@@ -14,7 +14,7 @@
     src: templates/interfaces
     dest: /etc/network/interfaces
 
-- name: Restart network - WARN: This will break connection
+- name: Restart network WARN This will break connection
   service:
       name: networking
       state: restarted

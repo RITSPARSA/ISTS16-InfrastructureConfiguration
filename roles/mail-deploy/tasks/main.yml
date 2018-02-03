@@ -3,16 +3,21 @@
 
 # Copy the configure script to the server for
 - name: Copying configure script
-  win_template:
-    src: ../templates/configure.j2
+  win_copy:
+    src: Setup-hMail.ps1
     dest: C:\Setup-hMail.ps1
 
-# Execute the script
-- name: Running Script
-  win_shell: C:\Setup-hMail.ps1
+- name: Run script
+  script: Setup-hMail.ps1 -domainName "{{ hmail_domain_name }}" -ipAddr "{{ machines[inventory_hostname]['ip'] }}"
+    
 
-# Remove the script from the system
-- name: Removing file
-  win_file:
-    path: C:\Setup-hMail.ps1
-    state: absent
+# Execute the script
+#
+#- name: Running Script
+#  win_shell: C:\Setup-hMail.ps1
+#
+## Remove the script from the system
+#- name: Removing file
+#  win_file:
+#    path: C:\Setup-hMail.ps1
+#    state: absent

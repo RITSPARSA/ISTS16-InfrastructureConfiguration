@@ -19,45 +19,45 @@ vega.team0.ists
 
 [WindowsFTP]
 sirius.team0.ists
-sirius.team1.ists
-sirius.team2.ists
-sirius.team3.ists
-sirius.team4.ists
-sirius.team5.ists
-sirius.team6.ists
-sirius.team7.ists
-sirius.team8.ists
-sirius.team9.ists
-sirius.team10.ists
-sirius.team11.ists
+#sirius.team1.ists
+#sirius.team2.ists
+#sirius.team3.ists
+#sirius.team4.ists
+#sirius.team5.ists
+#sirius.team6.ists
+#sirius.team7.ists
+#sirius.team8.ists
+#sirius.team9.ists
+#sirius.team10.ists
+#sirius.team11.ists
 
 [WindowsMail]
 tauri.team0.ists
-tauri.team1.ists
-tauri.team2.ists
-tauri.team3.ists
-tauri.team4.ists
-tauri.team5.ists
-tauri.team6.ists
-tauri.team7.ists
-tauri.team8.ists
-tauri.team9.ists
-tauri.team10.ists
-tauri.team11.ists
+#tauri.team1.ists
+#tauri.team2.ists
+#tauri.team3.ists
+#tauri.team4.ists
+#tauri.team5.ists
+#tauri.team6.ists
+#tauri.team7.ists
+#tauri.team8.ists
+#tauri.team9.ists
+#tauri.team10.ists
+#tauri.team11.ists
 
 [WindowsAD]
 sol.team0.ists
-sol.team1.ists
-sol.team2.ists
-sol.team3.ists
-sol.team4.ists
-sol.team5.ists
-sol.team6.ists
-sol.team7.ists
-sol.team8.ists
-sol.team9.ists
-sol.team10.ists
-sol.team11.ists
+#sol.team1.ists
+#sol.team2.ists
+#sol.team3.ists
+#sol.team4.ists
+#sol.team5.ists
+#sol.team6.ists
+#sol.team7.ists
+#sol.team8.ists
+#sol.team9.ists
+#sol.team10.ists
+#sol.team11.ists
 
 [CentOS]
 crucis.team0.ists
@@ -88,7 +88,11 @@ persei.team0.ists
 #persei.team11.ists
 
 [RaspberryPi]
+<<<<<<< HEAD
 luna.team0.ists
+=======
+#luna.team0.ists
+>>>>>>> d912c7925af49794368bfb4dccc3cb7105ff33d3
 #luna.team1.ists
 #luna.team2.ists
 #luna.team3.ists
@@ -135,31 +139,31 @@ pegasi.team0.ists
 
 [WindowsJenkins]
 wolf.team0.ists
-wolf.team1.ists
-wolf.team2.ists
-wolf.team3.ists
-wolf.team4.ists
-wolf.team5.ists
-wolf.team6.ists
-wolf.team7.ists
-wolf.team8.ists
-wolf.team9.ists
-wolf.team10.ists
-wolf.team11.ists
+#wolf.team1.ists
+#wolf.team2.ists
+#wolf.team3.ists
+#wolf.team4.ists
+#wolf.team5.ists
+#wolf.team6.ists
+#wolf.team7.ists
+#wolf.team8.ists
+#wolf.team9.ists
+#wolf.team10.ists
+#wolf.team11.ists
 
 [vSRX]
-cygni.team0.ists
-cygni.team1.ists
-cygni.team2.ists
-cygni.team3.ists
-cygni.team4.ists
-cygni.team5.ists
-cygni.team6.ists
-cygni.team7.ists
-cygni.team8.ists
-cygni.team9.ists
-cygni.team10.ists
-cygni.team11.ists
+#cygni.team0.ists
+#cygni.team1.ists
+#cygni.team2.ists
+#cygni.team3.ists
+#cygni.team4.ists
+#cygni.team5.ists
+#cygni.team6.ists
+#cygni.team7.ists
+#cygni.team8.ists
+#cygni.team9.ists
+#cygni.team10.ists
+#cygni.team11.ists
 
 #
 #   Parent Groups

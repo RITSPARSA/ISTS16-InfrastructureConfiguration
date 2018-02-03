@@ -1,0 +1,14 @@
+[DCINSTALL] 
+
+InstallDNS=yes
+NewDomain=Forest
+NewDomainDNSName=team{{ machines[inventory_hostname]['team_id'] }}.ists
+DomainNetBiosName=TEAM{{ machines[inventory_hostname]['team_id'] }}
+ReplicaOrNewDomain=domain
+ForestLevel=4
+DomainLevel=4
+DatabasePath="C:\Windows\NTDS" 
+LogPath="C:\Windows\NTDS" 
+RebootOnCompletion=yes
+SYSVOLPath="C:\Windows\SYSVOL" 
+SafeModeAdminPassword=Changeme-2018

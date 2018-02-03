@@ -9,10 +9,6 @@
   roles:
       - ad-deploy
 
-- hosts: all
-  roles:
-    - osquery-deploy
-
 - hosts: Windows
   roles:
     - smb-deploy

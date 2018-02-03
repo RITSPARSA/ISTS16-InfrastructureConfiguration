@@ -3,7 +3,7 @@
 
 - name: Create Directory
   file:
-    path: "{{ nix_file_location }}"
+    path: "{{ bsd_dir }}"
     state: directory
     owner: root
     group: wheel

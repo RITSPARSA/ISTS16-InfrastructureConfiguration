@@ -1,7 +1,6 @@
-- hosts: manager
+- hosts: CentOS 
   tasks:
     - include_vars: vars/main.yml
-    #- import_tasks: tasks/deploy_graylog.yml
+    - import_tasks: tasks/deploy_graylog.yml
     - import_tasks: tasks/setup_filebeat.yml
-    #- import_tasks: tasks/setup_graylog.yml
-    #- import_tasks: tasks/deploy_kolide.yml
+    - import_tasks: tasks/deploy_kolide.yml

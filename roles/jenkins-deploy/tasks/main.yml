@@ -7,7 +7,7 @@
     state: directory
     owner: root
     group: wheel
-    mode: 0700
+    mode: 0755
     recurse: yes
   when: ansible_os_family == 'FreeBSD'
 

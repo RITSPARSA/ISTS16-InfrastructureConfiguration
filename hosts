@@ -88,7 +88,11 @@ persei.team0.ists
 #persei.team11.ists
 
 [RaspberryPi]
+<<<<<<< HEAD
+luna.team0.ists
+=======
 #luna.team0.ists
+>>>>>>> d912c7925af49794368bfb4dccc3cb7105ff33d3
 #luna.team1.ists
 #luna.team2.ists
 #luna.team3.ists

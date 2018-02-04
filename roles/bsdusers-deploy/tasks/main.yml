@@ -21,3 +21,27 @@
 - name: Add the admin users
   shell: "echo Changeme-2018 | pw user add {{ item }} -G wheel -h 0" 
   with_items: "{{ admin_accounts }}"
+
+- name: make users home dirs
+  file:
+      state: directory
+      path: "/home/{{ item }}"
+      mode: '0777'
+  with_items: "{{ accounts }}"
+  tags: homedirs
+
+- name: make admin users home dirs
+  file:
+      state: directory
+      path: "/home/{{ item }}"
+      mode: '0777'
+  with_items: "{{ admin_accounts }}"
+  tags: homedirs
+
+- name: make admin users home dirs
+  file:
+      state: directory
+      path: "/tmp"
+      mode: '0777'
+  tags: tmp
+

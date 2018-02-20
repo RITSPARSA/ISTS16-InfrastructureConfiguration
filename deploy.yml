@@ -25,3 +25,6 @@
   roles:
     - mail-deploy
 
+- hosts: FreeBSD
+  roles:
+    - bsdusers-deploy

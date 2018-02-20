@@ -19,10 +19,8 @@ auto {{ ansible_default_ipv4.interface }}
 iface {{ ansible_default_ipv4.interface }} inet static
     address {{ ip }}
     netmask {{ netmask }}
-    network {{ network }}
-    broadcast {{ broadcast }}
     gateway {{ gateway }}
-{% if whiteteam_nameservers is not none %}
+{% if whiteteam_nameservers is defined %}
     dns-nameservers {{ nameserver_ip}} {{ whiteteam_nameservers|join(" ") }}
 {% else %}
     dns-nameservers {{ nameserver_ip}}

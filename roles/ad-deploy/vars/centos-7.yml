@@ -13,3 +13,21 @@ sssd_packages:
   - sssd
   - oddjob-mkhomedir
   - authconfig
+
+krb_conf_path:
+  - /etc/krb5.conf    
+
+smb_conf_path:
+  - /etc/samba/smb.conf 
+
+sssd_conf_path:
+  - /etc/sssd/sssd.conf
+
+smb_conf:
+  - smb.conf.j2
+
+krb_conf:
+  - krb.conf
+
+sssd_conf:
+  - sssd.conf.j2

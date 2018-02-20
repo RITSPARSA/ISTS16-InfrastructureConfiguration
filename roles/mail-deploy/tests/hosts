@@ -9,4 +9,4 @@ ansible_winrm_scheme=http
 ansible_winrm_server_cert_validation=ignore
 
 [mail]
-tauri.team1.ists
+tauri.team0.ists

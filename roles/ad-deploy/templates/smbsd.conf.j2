@@ -1,0 +1,11 @@
+[global]
+        netbios name = freebsd03
+        realm = {{ adauth_realm }} 
+        workgroup = {{ adauth_workgroup }} 
+        password server = {{ adauth_pdc }}
+        security = ADS
+        winbind enum groups = Yes
+        winbind enum users = Yes
+        winbind nss info = rfc2307
+        idmap config *:range = 2000-9999
+        idmap config * : backend = tdb

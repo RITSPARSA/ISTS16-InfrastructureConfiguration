@@ -1,6 +1,6 @@
 adauth_workgroup: "EXAMPLE"
 adauth_realm: "EXAMPLE.COM"
-adauth_pdc: "pdc1.example.com"
+adauth_pdc: "{{ hostnames['ad'] }}.team{{ machines[inventory_hostname]['team_id']}}.ists"
 adauth_pdc_ip: "192.168.1.1"
 adauth_sdc: "sdc1.example.com"
 adauth_sdc_ip: "192.168.1.2"

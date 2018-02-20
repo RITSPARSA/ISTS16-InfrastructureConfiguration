@@ -1,0 +1,15 @@
+- name: Check if authconfig did a previous run
+  command: "/bin/egrep '^auth.*sufficient.*pam_sss.so' /etc/pam.d/system-auth"
+  register: authconfig_run
+  changed_when: false
+  ignore_errors: true
+
+- name: Configure server to use SSSD for authentication
+  # TODO: https://fedorahosted.org/sssd/wiki/Configuring_sssd_with_ad_server#ConfigureNSSPAMmanually
+  command: /usr/sbin/authconfig --enablesssd --enablesssdauth --enablemkhomedir --updateall --nostart
+  #when: authconfig_run.stdout.find("pam_sss.so") == -1
+  when: authconfig_run.rc != 0
+  notify: restart sssd
+
+- name: Ensure oddjobd for mkhomedir is started and enabled on boot
+  service: name=oddjobd state=started enabled=yes

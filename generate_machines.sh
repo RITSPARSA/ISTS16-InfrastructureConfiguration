@@ -75,6 +75,9 @@ for i in $(seq 0 11); do echo -e "
     ip: \"10.3.$i.254/24\"
     public_ip: \"10.0.200.$[$i+64]/26\"
     gateway: \"10.0.200.126\"
+  10.4.0.$[$i+100]:
+    team_id: \"$i\"
+    ip: \"10.4.0.$[$i+100]\"
    
 \n"; done
 
@@ -85,10 +88,11 @@ hostnames:
   web2: pegasi
   elastic1: crucis
   jenkins1: vega
-  jenkisn2: wolf
+  jenkins2: wolf
   ad: sol
   ftp: sirius
   db: sirius
   attack: persei
   android: andromeda
-  router: cygni\n"
+  router: cygni
+  pi: luna\n"

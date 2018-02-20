@@ -4,6 +4,7 @@ default_password: "Changeme-2018"
 whiteteam_nameservers:
   - "8.8.8.8"
 
+
 machines:
 
   vega.team0.ists:
@@ -76,6 +77,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.0.254"
     broadcast: "10.3.0.254"
+  cygni.team0.ists:
+    team_id: "0"
+    ip: "10.3.0.254/24"
+    public_ip: "10.0.200.64/26"
+    gateway: "10.0.200.126"
+  10.4.0.100:
+    team_id: "0"
+    ip: "10.4.0.100"
    
 
 
@@ -150,6 +159,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.1.254"
     broadcast: "10.3.1.254"
+  cygni.team1.ists:
+    team_id: "1"
+    ip: "10.3.1.254/24"
+    public_ip: "10.0.200.65/26"
+    gateway: "10.0.200.126"
+  10.4.0.101:
+    team_id: "1"
+    ip: "10.4.0.101"
    
 
 
@@ -224,6 +241,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.2.254"
     broadcast: "10.3.2.254"
+  cygni.team2.ists:
+    team_id: "2"
+    ip: "10.3.2.254/24"
+    public_ip: "10.0.200.66/26"
+    gateway: "10.0.200.126"
+  10.4.0.102:
+    team_id: "2"
+    ip: "10.4.0.102"
    
 
 
@@ -298,6 +323,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.3.254"
     broadcast: "10.3.3.254"
+  cygni.team3.ists:
+    team_id: "3"
+    ip: "10.3.3.254/24"
+    public_ip: "10.0.200.67/26"
+    gateway: "10.0.200.126"
+  10.4.0.103:
+    team_id: "3"
+    ip: "10.4.0.103"
    
 
 
@@ -372,6 +405,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.4.254"
     broadcast: "10.3.4.254"
+  cygni.team4.ists:
+    team_id: "4"
+    ip: "10.3.4.254/24"
+    public_ip: "10.0.200.68/26"
+    gateway: "10.0.200.126"
+  10.4.0.104:
+    team_id: "4"
+    ip: "10.4.0.104"
    
 
 
@@ -446,6 +487,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.5.254"
     broadcast: "10.3.5.254"
+  cygni.team5.ists:
+    team_id: "5"
+    ip: "10.3.5.254/24"
+    public_ip: "10.0.200.69/26"
+    gateway: "10.0.200.126"
+  10.4.0.105:
+    team_id: "5"
+    ip: "10.4.0.105"
    
 
 
@@ -520,6 +569,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.6.254"
     broadcast: "10.3.6.254"
+  cygni.team6.ists:
+    team_id: "6"
+    ip: "10.3.6.254/24"
+    public_ip: "10.0.200.70/26"
+    gateway: "10.0.200.126"
+  10.4.0.106:
+    team_id: "6"
+    ip: "10.4.0.106"
    
 
 
@@ -594,6 +651,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.7.254"
     broadcast: "10.3.7.254"
+  cygni.team7.ists:
+    team_id: "7"
+    ip: "10.3.7.254/24"
+    public_ip: "10.0.200.71/26"
+    gateway: "10.0.200.126"
+  10.4.0.107:
+    team_id: "7"
+    ip: "10.4.0.107"
    
 
 
@@ -668,6 +733,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.8.254"
     broadcast: "10.3.8.254"
+  cygni.team8.ists:
+    team_id: "8"
+    ip: "10.3.8.254/24"
+    public_ip: "10.0.200.72/26"
+    gateway: "10.0.200.126"
+  10.4.0.108:
+    team_id: "8"
+    ip: "10.4.0.108"
    
 
 
@@ -742,6 +815,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.9.254"
     broadcast: "10.3.9.254"
+  cygni.team9.ists:
+    team_id: "9"
+    ip: "10.3.9.254/24"
+    public_ip: "10.0.200.73/26"
+    gateway: "10.0.200.126"
+  10.4.0.109:
+    team_id: "9"
+    ip: "10.4.0.109"
    
 
 
@@ -816,6 +897,14 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.10.254"
     broadcast: "10.3.10.254"
+  cygni.team10.ists:
+    team_id: "10"
+    ip: "10.3.10.254/24"
+    public_ip: "10.0.200.74/26"
+    gateway: "10.0.200.126"
+  10.4.0.110:
+    team_id: "10"
+    ip: "10.4.0.110"
    
 
 
@@ -890,6 +979,17 @@ machines:
     netmask: "255.255.255.0"
     gateway: "10.3.11.254"
     broadcast: "10.3.11.254"
+  cygni.team11.ists:
+    team_id: "11"
+    ip: "10.3.11.254/24"
+    public_ip: "10.0.200.75/26"
+    gateway: "10.0.200.126"
+  10.4.0.111:
+    team_id: "11"
+    ip: "10.4.0.111"
+   
+
+
 
 hostnames:
   mail: tauri
@@ -897,10 +997,12 @@ hostnames:
   web2: pegasi
   elastic1: crucis
   jenkins1: vega
-  jenkisn2: wolf
+  jenkins2: wolf
   ad: sol
   ftp: sirius
   db: sirius
   attack: persei
   android: andromeda
+  router: cygni
+  pi: luna
 
